@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         // body: ARKitSceneView(
         //     onARKitViewCreated: (controller) => arView(controller)),
-        body: const MyHomePage(title: "AR Widget"),
+        body: const WidgetProjectionPage(),
       ),
     );
   }
