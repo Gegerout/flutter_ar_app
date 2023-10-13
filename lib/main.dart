@@ -1,3 +1,4 @@
+import 'package:ar_app/screens/widget_projection_screen.dart';
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text("AR App"),
         ),
-        body: ARKitSceneView(
-            onARKitViewCreated: (controller) => arView(controller)),
+        // body: ARKitSceneView(
+        //     onARKitViewCreated: (controller) => arView(controller)),
+        body: const MyHomePage(title: "AR Widget"),
       ),
     );
   }
