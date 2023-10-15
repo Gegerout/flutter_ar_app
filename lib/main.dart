@@ -1,3 +1,4 @@
+import 'package:ar_app/screens/face_detection_screen.dart';
 import 'package:ar_app/screens/widget_projection_screen.dart';
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         ),
         // body: ARKitSceneView(
         //     onARKitViewCreated: (controller) => arView(controller)),
-        body: WidgetProjectionPage(),
+        //body: const WidgetProjectionPage(),
+        body: const FaceDetectionPage(),
       ),
     );
   }
