@@ -4,6 +4,7 @@ import 'package:ar_app/screens/measure_screen.dart';
 import 'package:ar_app/screens/occlusion_screen.dart';
 import 'package:ar_app/screens/panorama_page.dart';
 import 'package:ar_app/screens/physics_screen.dart';
+import 'package:ar_app/screens/plane_detection_screen.dart';
 import 'package:ar_app/screens/widget_projection_screen.dart';
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
         //body: const MeasurePage(),
         //body: const OcclusionPage(),
         //body: const PanoramaPage(),
-        body: const PhysicsPage(),
+        //body: const PhysicsPage(),
+        body: const PlaneDetectionPage(),
       ),
     );
   }
