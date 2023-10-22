@@ -47,7 +47,7 @@ class _VideoPageState extends State<VideoPage> {
     _video = ARKitMaterialProperty.video(
       width: 640,
       height: 320,
-      filename: 'assets/videos/intro.mp4',
+      url: "https://dt105.auadyyzzfaffa.xyz/download?file=MmUyYThiNDlhMTIyMmJiZjQ2MzQ0NzgzMDRjYzZlNGFhNWM1ZTc3OGU4NzUxNmZlNDU2ZDg1MmE0YmYyODZlN18xMDgwcDYwLm1wNOKYr3gybWF0ZS5jb20tRmx1dHRlciBUdXRvcmlhbCBmb3IgQmVnaW5uZXJzICMxIC0gSW50cm8gJiBTZXR1cOKYrzEwODBwNjA"
     );
     final material = ARKitMaterial(
       diffuse: _video,
