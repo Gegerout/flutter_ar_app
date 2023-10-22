@@ -8,6 +8,7 @@ import 'package:ar_app/screens/plane_detection_screen.dart';
 import 'package:ar_app/screens/real_time_updates_screen.dart';
 import 'package:ar_app/screens/snapshot_scene_screen.dart';
 import 'package:ar_app/screens/tap_screen.dart';
+import 'package:ar_app/screens/video_page.dart';
 import 'package:ar_app/screens/widget_projection_screen.dart';
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
         //body: const PlaneDetectionPage(),
         //body: const RealTimeUpdatesPage()
         //body: const SnapshotScenePage(),
-        body: const TapPage(),
+        //body: const TapPage(),
+        body: const VideoPage(),
       ),
     );
   }
