@@ -55,7 +55,7 @@ class _VideoPageState extends State<VideoPage> {
     );
 
     final sphere = ARKitSphere(materials: [material], radius: 1);
-    final plane = ARKitPlane(width: 1920, height: 1080);
+    final plane = ARKitPlane(width: 20, height: 10, materials: [material]);
 
     final node = ARKitNode(geometry: plane);
     node.eulerAngles = vector.Vector3(0, 0, math.pi); // rotate the node
