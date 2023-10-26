@@ -47,7 +47,7 @@ class _VideoPageState extends State<VideoPage> {
     _video = ARKitMaterialProperty.video(
       width: 640,
       height: 380,
-      url: "https://dt105.auadyyzzfaffa.xyz/download?file=MmUyYThiNDlhMTIyMmJiZjQ2MzQ0NzgzMDRjYzZlNGFhNWM1ZTc3OGU4NzUxNmZlNDU2ZDg1MmE0YmYyODZlN18xMDgwcDYwLm1wNOKYr3gybWF0ZS5jb20tRmx1dHRlciBUdXRvcmlhbCBmb3IgQmVnaW5uZXJzICMxIC0gSW50cm8gJiBTZXR1cOKYrzEwODBwNjA"
+      url: "https://drive.usercontent.google.com/u/0/uc?id=1zGK-Ss9TIY9_FrreCTls3J3bfC-ICMLX&export=download"
     );
     final material = ARKitMaterial(
       diffuse: _video,
@@ -58,7 +58,7 @@ class _VideoPageState extends State<VideoPage> {
     final plane = ARKitPlane(width: 1, height: 0.5, materials: [material]);
 
     final node = ARKitNode(geometry: plane);
-    node.eulerAngles = vector.Vector3(0, 0, math.pi); // rotate the node
+    //node.eulerAngles = vector.Vector3(0, 0, math.pi); // rotate the node
 
     this.arkitController.add(node);
   }
