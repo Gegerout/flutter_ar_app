@@ -68,6 +68,7 @@ import 'package:vector_math/vector_math_64.dart' as vector;
 
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 class VideoPage extends StatefulWidget {
   const VideoPage({super.key});
@@ -81,6 +82,7 @@ class VideoPage extends StatefulWidget {
 class _VideoPageState extends State<VideoPage> {
   late ARKitController arkitController;
   late ARKitMaterialVideo _video;
+  late VideoPlayerController _controller;
   bool _isPlaying = true;
   String anchorId = '';
   double x = 0, y = 0;
@@ -88,10 +90,22 @@ class _VideoPageState extends State<VideoPage> {
   Matrix4 transform = Matrix4.identity();
 
   @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.networkUrl(Uri.parse(
+        'https://drive.usercontent.google.com/u/0/uc?id=1zGK-Ss9TIY9_FrreCTls3J3bfC-ICMLX&export=download'))
+      ..initialize().then((_) {
+        setState(() {});
+        _controller.play();
+      });
+  }
+
+  @override
   void dispose() {
     arkitController.onAddNodeForAnchor = null;
     arkitController.onUpdateNodeForAnchor = null;
     _video.dispose();
+    _controller.dispose();
     arkitController.dispose();
     super.dispose();
   }
@@ -99,11 +113,16 @@ class _VideoPageState extends State<VideoPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(title: const Text('Video Sample')),
-      body: ARKitSceneView(
-        trackingImagesGroupName: 'AR Resources',
-        onARKitViewCreated: onARKitViewCreated,
-        worldAlignment: ARWorldAlignment.camera,
-        configuration: ARKitConfiguration.imageTracking,
+      body: Stack(
+        children: [
+          ARKitSceneView(
+            trackingImagesGroupName: 'AR Resources',
+            onARKitViewCreated: onARKitViewCreated,
+            worldAlignment: ARWorldAlignment.camera,
+            configuration: ARKitConfiguration.imageTracking,
+          ),
+          Positioned(child: VideoPlayer(_controller))
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
@@ -123,8 +142,8 @@ class _VideoPageState extends State<VideoPage> {
     this.arkitController.onUpdateNodeForAnchor = _handleUpdateAnchor;
 
     _video = ARKitMaterialProperty.video(
-        width: 640,
-        height: 380,
+        width: 1920,
+        height: 1080,
         url:
             "https://drive.usercontent.google.com/u/0/uc?id=1zGK-Ss9TIY9_FrreCTls3J3bfC-ICMLX&export=download");
     final material = ARKitMaterial(
