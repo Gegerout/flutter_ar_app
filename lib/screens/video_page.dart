@@ -81,7 +81,6 @@ class VideoPage extends StatefulWidget {
 
 class _VideoPageState extends State<VideoPage> {
   late ARKitController arkitController;
-  late ARKitMaterialVideo _video;
   late VideoPlayerController _controller;
   bool _isPlaying = true;
   String anchorId = '';
@@ -104,7 +103,6 @@ class _VideoPageState extends State<VideoPage> {
   void dispose() {
     arkitController.onAddNodeForAnchor = null;
     arkitController.onUpdateNodeForAnchor = null;
-    _video.dispose();
     _controller.dispose();
     arkitController.dispose();
     super.dispose();
@@ -126,7 +124,7 @@ class _VideoPageState extends State<VideoPage> {
               top: y,
               child: Container(
                   transform: transform,
-                  width: width,
+                  width: width * 1.5,
                   height: height,
                   child: VideoPlayer(_controller)))
         ],
@@ -134,10 +132,8 @@ class _VideoPageState extends State<VideoPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           if (_isPlaying) {
-            //await _video.pause();
             _controller.pause();
           } else {
-            //await _video.play();
             _controller.play();
           }
           setState(() => _isPlaying = !_isPlaying);
@@ -149,24 +145,6 @@ class _VideoPageState extends State<VideoPage> {
     this.arkitController = arkitController;
     this.arkitController.onAddNodeForAnchor = _handleAddAnchor;
     this.arkitController.onUpdateNodeForAnchor = _handleUpdateAnchor;
-
-    // _video = ARKitMaterialProperty.video(
-    //     width: 1920,
-    //     height: 1080,
-    //     url:
-    //         "https://drive.usercontent.google.com/u/0/uc?id=1zGK-Ss9TIY9_FrreCTls3J3bfC-ICMLX&export=download");
-    // final material = ARKitMaterial(
-    //   diffuse: _video,
-    //   doubleSided: true,
-    // );
-    //
-    // final sphere = ARKitSphere(materials: [material], radius: 1);
-    // final plane = ARKitPlane(width: 0.5, height: 0.25, materials: [material]);
-    //
-    // final node = ARKitNode(geometry: plane);
-    // node.eulerAngles = vector.Vector3(0, 0, math.pi); // rotate the node
-    //
-    // this.arkitController.add(node);
   }
 
   void _handleAddAnchor(ARKitAnchor anchor) {
