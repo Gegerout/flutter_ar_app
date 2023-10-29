@@ -5,6 +5,7 @@ import 'package:ar_app/screens/occlusion_screen.dart';
 import 'package:ar_app/screens/panorama_page.dart';
 import 'package:ar_app/screens/physics_screen.dart';
 import 'package:ar_app/screens/plane_detection_screen.dart';
+import 'package:ar_app/screens/positioned_video_screen.dart';
 import 'package:ar_app/screens/real_time_updates_screen.dart';
 import 'package:ar_app/screens/snapshot_scene_screen.dart';
 import 'package:ar_app/screens/tap_screen.dart';
@@ -45,7 +46,8 @@ class MyApp extends StatelessWidget {
         //body: const RealTimeUpdatesPage()
         //body: const SnapshotScenePage(),
         //body: const TapPage(),
-        body: const VideoPage(),
+        //body: const VideoPage(),
+        body: const PositionedVideoPage(),
       ),
     );
   }
