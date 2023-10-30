@@ -1,4 +1,5 @@
 import 'package:ar_app/screens/face_detection_screen.dart';
+import 'package:ar_app/screens/home_screen.dart';
 import 'package:ar_app/screens/manipulation_screen.dart';
 import 'package:ar_app/screens/measure_screen.dart';
 import 'package:ar_app/screens/occlusion_screen.dart';
@@ -47,7 +48,8 @@ class MyApp extends StatelessWidget {
         //body: const SnapshotScenePage(),
         //body: const TapPage(),
         //body: const VideoPage(),
-        body: const PositionedVideoPage(),
+        //body: const PositionedVideoPage(),
+        body: const HomePage(),
       ),
     );
   }
