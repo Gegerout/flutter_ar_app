@@ -115,7 +115,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ARKit Demo'),
+        title: const Text('AR App'),
       ),
       body:
       ListView(children: samples.map((s) => SampleItem(item: s)).toList()),

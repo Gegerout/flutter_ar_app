@@ -59,7 +59,7 @@ class _PositionedVideoPageState extends State<PositionedVideoPage> {
               top: y,
               child: Container(
                   transform: transform,
-                  width: width * 1.5,
+                  width: width * 1.2,
                   height: height,
                   child: VideoPlayer(_controller)))
         ],
