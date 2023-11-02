@@ -10,6 +10,7 @@ import 'package:ar_app/screens/widget_projection_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'body_tracking_screen.dart';
+import 'custom_object_screen.dart';
 import 'face_detection_screen.dart';
 import 'manipulation_screen.dart';
 import 'measure_screen.dart';
@@ -118,6 +119,13 @@ class HomePage extends StatelessWidget {
         Icons.camera,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const SnapshotScenePage())),
+      ),
+      Sample(
+        'Custom Object',
+        'Place custom object on plane with coaching overlay.',
+        Icons.nature,
+            () => Navigator.of(context)
+            .push<void>(MaterialPageRoute(builder: (c) => const CustomObjectPage())),
       )
     ];
 
