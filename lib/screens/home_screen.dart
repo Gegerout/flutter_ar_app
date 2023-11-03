@@ -10,6 +10,7 @@ import 'package:ar_app/screens/widget_projection_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'body_tracking_screen.dart';
+import 'custom_animation_screen.dart';
 import 'custom_object_screen.dart';
 import 'face_detection_screen.dart';
 import 'manipulation_screen.dart';
@@ -124,8 +125,15 @@ class HomePage extends StatelessWidget {
         'Custom Object',
         'Place custom object on plane with coaching overlay.',
         Icons.nature,
-            () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const CustomObjectPage())),
+        () => Navigator.of(context).push<void>(
+            MaterialPageRoute(builder: (c) => const CustomObjectPage())),
+      ),
+      Sample(
+        'Custom Animation',
+        'Custom object animation. Port of https://github.com/eh3rrera/ARKitAnimation',
+        Icons.accessibility_new,
+        () => Navigator.of(context).push<void>(
+            MaterialPageRoute(builder: (c) => const CustomAnimationPage())),
       )
     ];
 
