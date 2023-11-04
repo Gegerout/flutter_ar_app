@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'body_tracking_screen.dart';
 import 'custom_animation_screen.dart';
 import 'custom_object_screen.dart';
+import 'distance_tracking_screen.dart';
 import 'face_detection_screen.dart';
 import 'manipulation_screen.dart';
 import 'measure_screen.dart';
@@ -134,6 +135,13 @@ class HomePage extends StatelessWidget {
         Icons.accessibility_new,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const CustomAnimationPage())),
+      ),
+      Sample(
+        'Distance tracking',
+        'Detects horizontal plane and track distance on it.',
+        Icons.blur_on,
+            () => Navigator.of(context).push<void>(
+            MaterialPageRoute(builder: (c) => const DistanceTrackingPage())),
       )
     ];
 
