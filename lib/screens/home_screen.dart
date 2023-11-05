@@ -14,6 +14,7 @@ import 'custom_animation_screen.dart';
 import 'custom_object_screen.dart';
 import 'distance_tracking_screen.dart';
 import 'face_detection_screen.dart';
+import 'load_model_screen.dart';
 import 'manipulation_screen.dart';
 import 'measure_screen.dart';
 import 'occlusion_screen.dart';
@@ -130,6 +131,13 @@ class HomePage extends StatelessWidget {
             MaterialPageRoute(builder: (c) => const CustomObjectPage())),
       ),
       Sample(
+        'Load .gltf or .glb',
+        'Load .gltf or .glb from the Flutter assets or the Documents folder',
+        Icons.folder_copy,
+        () => Navigator.of(context).push<void>(
+            MaterialPageRoute(builder: (c) => const LoadGltfOrGlbFilePage())),
+      ),
+      Sample(
         'Custom Animation',
         'Custom object animation. Port of https://github.com/eh3rrera/ARKitAnimation',
         Icons.accessibility_new,
@@ -140,7 +148,7 @@ class HomePage extends StatelessWidget {
         'Distance tracking',
         'Detects horizontal plane and track distance on it.',
         Icons.blur_on,
-            () => Navigator.of(context).push<void>(
+        () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const DistanceTrackingPage())),
       )
     ];
