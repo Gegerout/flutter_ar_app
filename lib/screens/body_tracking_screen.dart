@@ -53,7 +53,7 @@ class _BodyTrackingPageState extends State<BodyTrackingPage> {
       transform.getColumn(3).z,
     );
     return ARKitReferenceNode(
-      url: 'models.scnassets/dash.dae',
+      url: 'model.scnassets/dash.dae',
       scale: vector.Vector3.all(0.5),
       position: position,
     );

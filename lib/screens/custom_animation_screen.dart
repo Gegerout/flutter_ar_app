@@ -31,7 +31,7 @@ class _CustomAnimationPageState extends State<CustomAnimationPage> {
         if (idle) {
           await arkitController.playAnimation(
               key: 'dancing',
-              sceneName: 'models.scnassets/twist_danceFixed',
+              sceneName: 'model.scnassets/twist_danceFixed',
               animationIdentifier: 'twist_danceFixed-1');
         } else {
           await arkitController.stopAnimation(key: 'dancing');
@@ -63,7 +63,7 @@ class _CustomAnimationPageState extends State<CustomAnimationPage> {
       controller?.remove(node!.name);
     }
     node = ARKitReferenceNode(
-      url: 'models.scnassets/idleFixed.dae',
+      url: 'model.scnassets/idleFixed.dae',
       position: vector.Vector3(0, 0, 0),
       scale: vector.Vector3(0.02, 0.02, 0.02),
     );
