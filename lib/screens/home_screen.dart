@@ -1,14 +1,13 @@
-import 'package:ar_app/screens/panorama_page.dart';
-import 'package:ar_app/screens/physics_screen.dart';
-import 'package:ar_app/screens/plane_detection_screen.dart';
-import 'package:ar_app/screens/positioned_video_screen.dart';
-import 'package:ar_app/screens/real_time_updates_screen.dart';
-import 'package:ar_app/screens/snapshot_scene_screen.dart';
-import 'package:ar_app/screens/tap_screen.dart';
-import 'package:ar_app/screens/video_screen.dart';
-import 'package:ar_app/screens/widget_projection_screen.dart';
+import 'panorama_page.dart';
+import 'physics_screen.dart';
+import 'plane_detection_screen.dart';
+import 'positioned_video_screen.dart';
+import 'real_time_updates_screen.dart';
+import 'snapshot_scene_screen.dart';
+import 'tap_screen.dart';
+import 'video_screen.dart';
+import 'widget_projection_screen.dart';
 import 'package:flutter/material.dart';
-
 import 'body_tracking_screen.dart';
 import 'custom_animation_screen.dart';
 import 'custom_object_screen.dart';
