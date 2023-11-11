@@ -1,3 +1,4 @@
+import '../models/screen_model.dart';
 import 'panorama_page.dart';
 import 'physics_screen.dart';
 import 'plane_detection_screen.dart';
@@ -24,126 +25,126 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final samples = [
-      Sample(
+      ScreenModel(
         'Tap',
         'Sphere which handles tap event.',
         Icons.touch_app,
         () => Navigator.of(context)
             .push<void>(MaterialPageRoute(builder: (c) => const TapPage())),
       ),
-      Sample(
+      ScreenModel(
         'Plane Detection',
         'Detects horizontal plane.',
         Icons.blur_on,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const PlaneDetectionPage())),
       ),
-      Sample(
+      ScreenModel(
         'Measure',
         'Measures distances',
         Icons.linear_scale,
         () => Navigator.of(context)
             .push<void>(MaterialPageRoute(builder: (c) => const MeasurePage())),
       ),
-      Sample(
+      ScreenModel(
         'Physics',
         'A sphere and a plane with dynamic and static physics',
         Icons.file_download,
         () => Navigator.of(context)
             .push<void>(MaterialPageRoute(builder: (c) => const PhysicsPage())),
       ),
-      Sample(
+      ScreenModel(
         'Occlusion',
         'Spheres which are not visible after horizontal and vertical planes.',
         Icons.blur_circular,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const OcclusionPage())),
       ),
-      Sample(
+      ScreenModel(
         'Manipulation',
         'Custom objects with pinch and rotation events.',
         Icons.threed_rotation,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const ManipulationPage())),
       ),
-      Sample(
+      ScreenModel(
         'Face Tracking',
         'Face mask sample.',
         Icons.face,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const FaceDetectionPage())),
       ),
-      Sample(
+      ScreenModel(
         'Body Tracking',
         'Dash that follows your hand.',
         Icons.person,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const BodyTrackingPage())),
       ),
-      Sample(
+      ScreenModel(
         'Panorama',
         '360 photo sample.',
         Icons.panorama,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const PanoramaPage())),
       ),
-      Sample(
+      ScreenModel(
         'Video',
         'Video on plane',
         Icons.videocam,
         () => Navigator.of(context)
             .push<void>(MaterialPageRoute(builder: (c) => const VideoPage())),
       ),
-      Sample(
+      ScreenModel(
         'Positioned video',
         'Positioned video on plane',
         Icons.videocam,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const PositionedVideoPage())),
       ),
-      Sample(
+      ScreenModel(
         'Widget Projection',
         'Flutter widgets in AR',
         Icons.widgets,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const WidgetProjectionPage())),
       ),
-      Sample(
+      ScreenModel(
         'Real Time Updates',
         'Calls a function once per frame',
         Icons.timer,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const RealTimeUpdatesPage())),
       ),
-      Sample(
+      ScreenModel(
         'Snapshot',
         'Make a photo of AR content',
         Icons.camera,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const SnapshotScenePage())),
       ),
-      Sample(
+      ScreenModel(
         'Custom Object',
         'Place custom object on plane with coaching overlay.',
         Icons.nature,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const CustomObjectPage())),
       ),
-      Sample(
+      ScreenModel(
         'Load .gltf or .glb',
         'Load .gltf or .glb from the Flutter assets or the Documents folder',
         Icons.folder_copy,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const LoadGltfOrGlbFilePage())),
       ),
-      Sample(
+      ScreenModel(
         'Custom Animation',
         'Custom object animation. Port of https://github.com/eh3rrera/ARKitAnimation',
         Icons.accessibility_new,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const CustomAnimationPage())),
       ),
-      Sample(
+      ScreenModel(
         'Distance tracking',
         'Detects horizontal plane and track distance on it.',
         Icons.blur_on,
@@ -167,7 +168,7 @@ class SampleItem extends StatelessWidget {
     required this.item,
     Key? key,
   }) : super(key: key);
-  final Sample item;
+  final ScreenModel item;
 
   @override
   Widget build(BuildContext context) {
@@ -188,13 +189,4 @@ class SampleItem extends StatelessWidget {
       ),
     );
   }
-}
-
-class Sample {
-  const Sample(this.title, this.description, this.icon, this.onTap);
-
-  final String title;
-  final String description;
-  final IconData icon;
-  final Function onTap;
 }
