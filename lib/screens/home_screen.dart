@@ -1,3 +1,4 @@
+import 'package:ar_app/utils/screen_card.dart';
 import '../models/screen_model.dart';
 import 'panorama_page.dart';
 import 'physics_screen.dart';
@@ -158,35 +159,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('AR App'),
       ),
       body:
-          ListView(children: samples.map((s) => SampleItem(item: s)).toList()),
-    );
-  }
-}
-
-class SampleItem extends StatelessWidget {
-  const SampleItem({
-    required this.item,
-    Key? key,
-  }) : super(key: key);
-  final ScreenModel item;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: InkWell(
-        onTap: () => item.onTap(),
-        child: ListTile(
-          leading: Icon(item.icon),
-          title: Text(
-            item.title,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          subtitle: Text(
-            item.description,
-            style: Theme.of(context).textTheme.titleSmall,
-          ),
-        ),
-      ),
+          ListView(children: samples.map((s) => ScreenCard(item: s)).toList()),
     );
   }
 }
