@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
         'Dash that follows your hand.',
         Icons.person,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const BodyTrackingPage())),
+            MaterialPageRoute(builder: (c) => const BodyTrackingScreen())),
       ),
       ScreenModel(
         'Panorama',

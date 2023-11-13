@@ -2,16 +2,16 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
-class BodyTrackingPage extends StatefulWidget {
-  const BodyTrackingPage({super.key});
+class BodyTrackingScreen extends StatefulWidget {
+  const BodyTrackingScreen({super.key});
 
   @override
-  State<BodyTrackingPage> createState() {
-    return _BodyTrackingPageState();
+  State<BodyTrackingScreen> createState() {
+    return _BodyTrackingScreenState();
   }
 }
 
-class _BodyTrackingPageState extends State<BodyTrackingPage> {
+class _BodyTrackingScreenState extends State<BodyTrackingScreen> {
   late ARKitController arkitController;
   ARKitNode? hand;
 
