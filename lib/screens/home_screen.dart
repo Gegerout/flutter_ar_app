@@ -143,7 +143,7 @@ class HomeScreen extends StatelessWidget {
         'Custom object animation. Port of https://github.com/eh3rrera/ARKitAnimation',
         Icons.accessibility_new,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const CustomAnimationPage())),
+            MaterialPageRoute(builder: (c) => const CustomAnimationScreen())),
       ),
       ScreenModel(
         'Distance tracking',

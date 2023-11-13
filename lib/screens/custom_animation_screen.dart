@@ -2,16 +2,16 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
-class CustomAnimationPage extends StatefulWidget {
-  const CustomAnimationPage({super.key});
+class CustomAnimationScreen extends StatefulWidget {
+  const CustomAnimationScreen({super.key});
 
   @override
-  State<CustomAnimationPage> createState() {
-    return _CustomAnimationPageState();
+  State<CustomAnimationScreen> createState() {
+    return _CustomAnimationScreenState();
   }
 }
 
-class _CustomAnimationPageState extends State<CustomAnimationPage> {
+class _CustomAnimationScreenState extends State<CustomAnimationScreen> {
   late ARKitController arkitController;
   ARKitReferenceNode? node;
   bool idle = true;
