@@ -2,16 +2,16 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
-class CustomObjectPage extends StatefulWidget {
-  const CustomObjectPage({super.key});
+class CustomObjectScreen extends StatefulWidget {
+  const CustomObjectScreen({super.key});
 
   @override
-  State<CustomObjectPage> createState() {
-    return _CustomObjectPageState();
+  State<CustomObjectScreen> createState() {
+    return _CustomObjectScreenState();
   }
 }
 
-class _CustomObjectPageState extends State<CustomObjectPage> {
+class _CustomObjectScreenState extends State<CustomObjectScreen> {
   late ARKitController arkitController;
   ARKitReferenceNode? node;
 

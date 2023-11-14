@@ -129,7 +129,7 @@ class HomeScreen extends StatelessWidget {
         'Place custom object on plane with coaching overlay.',
         Icons.nature,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const CustomObjectPage())),
+            MaterialPageRoute(builder: (c) => const CustomObjectScreen())),
       ),
       ScreenModel(
         'Load .gltf or .glb',
