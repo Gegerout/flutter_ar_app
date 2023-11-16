@@ -150,7 +150,7 @@ class HomeScreen extends StatelessWidget {
         'Detects horizontal plane and track distance on it.',
         Icons.blur_on,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const DistanceTrackingPage())),
+            MaterialPageRoute(builder: (c) => const DistanceTrackingScreen())),
       )
     ];
 

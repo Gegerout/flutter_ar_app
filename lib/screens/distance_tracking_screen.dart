@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:collection/collection.dart';
 
-class DistanceTrackingPage extends StatefulWidget {
-  const DistanceTrackingPage({super.key});
+class DistanceTrackingScreen extends StatefulWidget {
+  const DistanceTrackingScreen({super.key});
 
   @override
-  State<DistanceTrackingPage> createState() {
-    return _DistanceTrackingPageState();
+  State<DistanceTrackingScreen> createState() {
+    return _DistanceTrackingScreenState();
   }
 }
 
-class _DistanceTrackingPageState extends State<DistanceTrackingPage> {
+class _DistanceTrackingScreenState extends State<DistanceTrackingScreen> {
   late ARKitController arkitController;
   ARKitPlane? plane;
   ARKitNode? node;
