@@ -73,7 +73,7 @@ class HomeScreen extends StatelessWidget {
         'Face mask sample.',
         Icons.face,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const FaceDetectionPage())),
+            MaterialPageRoute(builder: (c) => const FaceDetectionScreen())),
       ),
       ScreenModel(
         'Body Tracking',

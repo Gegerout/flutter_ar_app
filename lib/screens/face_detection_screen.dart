@@ -2,16 +2,16 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
-class FaceDetectionPage extends StatefulWidget {
-  const FaceDetectionPage({super.key});
+class FaceDetectionScreen extends StatefulWidget {
+  const FaceDetectionScreen({super.key});
 
   @override
-  State<FaceDetectionPage> createState() {
-    return _FaceDetectionPageState();
+  State<FaceDetectionScreen> createState() {
+    return _FaceDetectionScreenState();
   }
 }
 
-class _FaceDetectionPageState extends State<FaceDetectionPage> {
+class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
   late ARKitController arkitController;
   ARKitNode? node;
 
