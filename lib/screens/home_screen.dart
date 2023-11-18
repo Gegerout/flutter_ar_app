@@ -136,7 +136,7 @@ class HomeScreen extends StatelessWidget {
         'Load .gltf or .glb from the Flutter assets or the Documents folder',
         Icons.folder_copy,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const LoadGltfOrGlbFilePage())),
+            MaterialPageRoute(builder: (c) => const LoadModelScreen())),
       ),
       ScreenModel(
         'Custom Animation',

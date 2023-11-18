@@ -3,14 +3,14 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
-class LoadGltfOrGlbFilePage extends StatefulWidget {
-  const LoadGltfOrGlbFilePage({super.key});
+class LoadModelScreen extends StatefulWidget {
+  const LoadModelScreen({super.key});
 
   @override
-  State<LoadGltfOrGlbFilePage> createState() => _LoadGltfOrGlbFilePageState();
+  State<LoadModelScreen> createState() => _LoadModelScreenState();
 }
 
-class _LoadGltfOrGlbFilePageState extends State<LoadGltfOrGlbFilePage> {
+class _LoadModelScreenState extends State<LoadModelScreen> {
   late ARKitController arkitController;
 
   @override
