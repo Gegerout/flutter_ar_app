@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
         'Custom objects with pinch and rotation events.',
         Icons.threed_rotation,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const ManipulationPage())),
+            MaterialPageRoute(builder: (c) => const ManipulationScreen())),
       ),
       ScreenModel(
         'Face Tracking',

@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:collection/collection.dart';
 
-class ManipulationPage extends StatefulWidget {
-  const ManipulationPage({super.key});
+class ManipulationScreen extends StatefulWidget {
+  const ManipulationScreen({super.key});
 
   @override
-  State<ManipulationPage> createState() {
-    return _ManipulationPageState();
+  State<ManipulationScreen> createState() {
+    return _ManipulationScreenState();
   }
 }
 
-class _ManipulationPageState extends State<ManipulationPage> {
+class _ManipulationScreenState extends State<ManipulationScreen> {
   late ARKitController arkitController;
   ARKitNode? boxNode;
 
