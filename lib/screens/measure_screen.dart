@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:collection/collection.dart';
 
-class MeasurePage extends StatefulWidget {
-  const MeasurePage({super.key});
+class MeasureScreen extends StatefulWidget {
+  const MeasureScreen({super.key});
 
   @override
-  State<MeasurePage> createState() {
-    return _MeasurePageState();
+  State<MeasureScreen> createState() {
+    return _MeasureScreenState();
   }
 }
 
-class _MeasurePageState extends State<MeasurePage> {
+class _MeasureScreenState extends State<MeasureScreen> {
   late ARKitController arkitController;
   vector.Vector3? lastPosition;
 

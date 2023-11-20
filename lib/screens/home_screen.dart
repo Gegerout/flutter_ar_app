@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
         'Measures distances',
         Icons.linear_scale,
         () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const MeasurePage())),
+            .push<void>(MaterialPageRoute(builder: (c) => const MeasureScreen())),
       ),
       ScreenModel(
         'Physics',
