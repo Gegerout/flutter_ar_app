@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:collection/collection.dart';
 
-class OcclusionPage extends StatefulWidget {
-  const OcclusionPage({super.key});
+class OcclusionScreen extends StatefulWidget {
+  const OcclusionScreen({super.key});
 
   @override
-  State<OcclusionPage> createState() {
-    return _OcclusionPageState();
+  State<OcclusionScreen> createState() {
+    return _OcclusionScreenState();
   }
 }
 
-class _OcclusionPageState extends State<OcclusionPage> {
+class _OcclusionScreenState extends State<OcclusionScreen> {
   late ARKitController arkitController;
   ARKitPlane? plane;
   ARKitNode? node;

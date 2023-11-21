@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
         'Spheres which are not visible after horizontal and vertical planes.',
         Icons.blur_circular,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const OcclusionPage())),
+            MaterialPageRoute(builder: (c) => const OcclusionScreen())),
       ),
       ScreenModel(
         'Manipulation',
