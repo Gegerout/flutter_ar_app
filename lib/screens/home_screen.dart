@@ -87,7 +87,7 @@ class HomeScreen extends StatelessWidget {
         '360 photo sample.',
         Icons.panorama,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const PanoramaPage())),
+            MaterialPageRoute(builder: (c) => const PanoramaScreen())),
       ),
       ScreenModel(
         'Video',

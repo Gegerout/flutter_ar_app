@@ -2,16 +2,16 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
 
-class PanoramaPage extends StatefulWidget {
-  const PanoramaPage({super.key});
+class PanoramaScreen extends StatefulWidget {
+  const PanoramaScreen({super.key});
 
   @override
-  State<PanoramaPage> createState() {
-    return _PanoramaPageState();
+  State<PanoramaScreen> createState() {
+    return _PanoramaScreenState();
   }
 }
 
-class _PanoramaPageState extends State<PanoramaPage> {
+class _PanoramaScreenState extends State<PanoramaScreen> {
   late ARKitController arkitController;
 
   @override
