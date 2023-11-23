@@ -52,7 +52,7 @@ class HomeScreen extends StatelessWidget {
         'A sphere and a plane with dynamic and static physics',
         Icons.file_download,
         () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const PhysicsPage())),
+            .push<void>(MaterialPageRoute(builder: (c) => const PhysicsScreen())),
       ),
       ScreenModel(
         'Occlusion',

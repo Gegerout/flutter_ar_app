@@ -3,16 +3,16 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
-class PhysicsPage extends StatefulWidget {
-  const PhysicsPage({super.key});
+class PhysicsScreen extends StatefulWidget {
+  const PhysicsScreen({super.key});
 
   @override
-  State<PhysicsPage> createState() {
-    return _PhysicsPageState();
+  State<PhysicsScreen> createState() {
+    return _PhysicsScreenState();
   }
 }
 
-class _PhysicsPageState extends State<PhysicsPage> {
+class _PhysicsScreenState extends State<PhysicsScreen> {
   late ARKitController arkitController;
 
   @override
