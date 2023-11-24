@@ -3,16 +3,16 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
-class PlaneDetectionPage extends StatefulWidget {
-  const PlaneDetectionPage({super.key});
+class PlaneDetectionScreen extends StatefulWidget {
+  const PlaneDetectionScreen({super.key});
 
   @override
-  State<PlaneDetectionPage> createState() {
-    return _PlaneDetectionPageState();
+  State<PlaneDetectionScreen> createState() {
+    return _PlaneDetectionScreenState();
   }
 }
 
-class _PlaneDetectionPageState extends State<PlaneDetectionPage> {
+class _PlaneDetectionScreenState extends State<PlaneDetectionScreen> {
   late ARKitController arkitController;
   ARKitPlane? plane;
   ARKitNode? node;

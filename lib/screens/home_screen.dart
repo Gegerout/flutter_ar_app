@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
         'Detects horizontal plane.',
         Icons.blur_on,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const PlaneDetectionPage())),
+            MaterialPageRoute(builder: (c) => const PlaneDetectionScreen())),
       ),
       ScreenModel(
         'Measure',
