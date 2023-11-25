@@ -101,7 +101,7 @@ class HomeScreen extends StatelessWidget {
         'Positioned video on plane',
         Icons.videocam,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const PositionedVideoPage())),
+            MaterialPageRoute(builder: (c) => const PositionedVideoScreen())),
       ),
       ScreenModel(
         'Widget Projection',

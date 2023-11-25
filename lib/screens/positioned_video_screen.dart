@@ -5,16 +5,16 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class PositionedVideoPage extends StatefulWidget {
-  const PositionedVideoPage({super.key});
+class PositionedVideoScreen extends StatefulWidget {
+  const PositionedVideoScreen({super.key});
 
   @override
-  State<PositionedVideoPage> createState() {
-    return _PositionedVideoPageState();
+  State<PositionedVideoScreen> createState() {
+    return _PositionedVideoScreenState();
   }
 }
 
-class _PositionedVideoPageState extends State<PositionedVideoPage> {
+class _PositionedVideoScreenState extends State<PositionedVideoScreen> {
   late ARKitController arkitController;
   late VideoPlayerController _controller;
   bool _isPlaying = true;
