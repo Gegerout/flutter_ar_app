@@ -115,7 +115,7 @@ class HomeScreen extends StatelessWidget {
         'Calls a function once per frame',
         Icons.timer,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const RealTimeUpdatesPage())),
+            MaterialPageRoute(builder: (c) => const RealTimeUpdatesScreen())),
       ),
       ScreenModel(
         'Snapshot',

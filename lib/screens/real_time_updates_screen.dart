@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:collection/collection.dart';
 
-class RealTimeUpdatesPage extends StatefulWidget {
-  const RealTimeUpdatesPage({super.key});
+class RealTimeUpdatesScreen extends StatefulWidget {
+  const RealTimeUpdatesScreen({super.key});
 
   @override
-  State<RealTimeUpdatesPage> createState() {
-    return _RealTimeUpdatesPageState();
+  State<RealTimeUpdatesScreen> createState() {
+    return _RealTimeUpdatesScreenState();
   }
 }
 
-class _RealTimeUpdatesPageState extends State<RealTimeUpdatesPage> {
+class _RealTimeUpdatesScreenState extends State<RealTimeUpdatesScreen> {
   late ARKitController arkitController;
   ARKitNode? movingNode;
   bool busy = false;
