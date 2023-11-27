@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 
 import '../utils/ar_helper.dart';
 
-class SnapshotScenePage extends StatefulWidget {
-  const SnapshotScenePage({super.key});
+class SnapshotSceneScreen extends StatefulWidget {
+  const SnapshotSceneScreen({super.key});
 
   @override
-  State<SnapshotScenePage> createState() {
-    return _SnapshotScenePageState();
+  State<SnapshotSceneScreen> createState() {
+    return _SnapshotSceneScreenState();
   }
 }
 
-class _SnapshotScenePageState extends State<SnapshotScenePage> {
+class _SnapshotSceneScreenState extends State<SnapshotSceneScreen> {
   late ARKitController arkitController;
 
   @override

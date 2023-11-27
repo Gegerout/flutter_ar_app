@@ -122,7 +122,7 @@ class HomeScreen extends StatelessWidget {
         'Make a photo of AR content',
         Icons.camera,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const SnapshotScenePage())),
+            MaterialPageRoute(builder: (c) => const SnapshotSceneScreen())),
       ),
       ScreenModel(
         'Custom Object',
