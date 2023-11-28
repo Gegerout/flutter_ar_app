@@ -2,16 +2,16 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
-class TapPage extends StatefulWidget {
-  const TapPage({super.key});
+class TapScreen extends StatefulWidget {
+  const TapScreen({super.key});
 
   @override
-  State<TapPage> createState() {
-    return _TapPageState();
+  State<TapScreen> createState() {
+    return _TapScreenState();
   }
 }
 
-class _TapPageState extends State<TapPage> {
+class _TapScreenState extends State<TapScreen> {
   late ARKitController arkitController;
   ARKitSphere? sphere;
 

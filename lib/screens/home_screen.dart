@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
         'Sphere which handles tap event.',
         Icons.touch_app,
         () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const TapPage())),
+            .push<void>(MaterialPageRoute(builder: (c) => const TapScreen())),
       ),
       ScreenModel(
         'Plane Detection',
