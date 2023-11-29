@@ -4,16 +4,16 @@ import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 
-class VideoPage extends StatefulWidget {
-  const VideoPage({super.key});
+class VideoScreen extends StatefulWidget {
+  const VideoScreen({super.key});
 
   @override
-  State<VideoPage> createState() {
-    return _VideoPageState();
+  State<VideoScreen> createState() {
+    return _VideoScreenState();
   }
 }
 
-class _VideoPageState extends State<VideoPage> {
+class _VideoScreenState extends State<VideoScreen> {
   late ARKitController arkitController;
   late ARKitMaterialVideo _video;
   bool _isPlaying = true;
