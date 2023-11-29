@@ -54,11 +54,11 @@ class _VideoScreenState extends State<VideoScreen> {
       doubleSided: true,
     );
 
-    final sphere = ARKitSphere(materials: [material], radius: 1);
+    //final sphere = ARKitSphere(materials: [material], radius: 1);
     final plane = ARKitPlane(width: 0.5, height: 0.25, materials: [material]);
 
     final node = ARKitNode(geometry: plane);
-    node.eulerAngles = vector.Vector3(0, 0, math.pi); // rotate the node
+    node.eulerAngles = vector.Vector3(0, 0, math.pi);
 
     this.arkitController.add(node);
   }
