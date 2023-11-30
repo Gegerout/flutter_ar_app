@@ -108,7 +108,7 @@ class HomeScreen extends StatelessWidget {
         'Flutter widgets in AR',
         Icons.widgets,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const WidgetProjectionPage())),
+            MaterialPageRoute(builder: (c) => const WidgetProjectionScreen())),
       ),
       ScreenModel(
         'Real Time Updates',

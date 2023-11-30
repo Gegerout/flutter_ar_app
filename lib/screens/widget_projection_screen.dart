@@ -3,16 +3,16 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
-class WidgetProjectionPage extends StatefulWidget {
-  const WidgetProjectionPage({super.key});
+class WidgetProjectionScreen extends StatefulWidget {
+  const WidgetProjectionScreen({super.key});
 
   @override
-  State<WidgetProjectionPage> createState() {
-    return _WidgetProjectionPageState();
+  State<WidgetProjectionScreen> createState() {
+    return _WidgetProjectionScreenState();
   }
 }
 
-class _WidgetProjectionPageState extends State<WidgetProjectionPage> {
+class _WidgetProjectionScreenState extends State<WidgetProjectionScreen> {
   late ARKitController arkitController;
   String anchorId = '';
   double x = 0, y = 0;
