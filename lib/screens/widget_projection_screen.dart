@@ -103,7 +103,7 @@ class _WidgetProjectionScreenState extends State<WidgetProjectionScreen> {
     final pointsWorldSpace = [topRight, bottomRight, bottomLeft, topLeft];
 
     final pointsViewportSpace = pointsWorldSpace.map(
-            (p) => arkitController.projectPoint(vector.Vector3(p.x, p.y, p.z)));
+        (p) => arkitController.projectPoint(vector.Vector3(p.x, p.y, p.z)));
     final pointsViewportSpaceResults = await Future.wait(pointsViewportSpace);
 
     setState(() {
