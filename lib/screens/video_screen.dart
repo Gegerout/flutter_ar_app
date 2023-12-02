@@ -45,10 +45,10 @@ class _VideoScreenState extends State<VideoScreen> {
     this.arkitController = arkitController;
 
     _video = ARKitMaterialProperty.video(
-      width: 640,
-      height: 380,
-      url: "https://drive.usercontent.google.com/u/0/uc?id=1zGK-Ss9TIY9_FrreCTls3J3bfC-ICMLX&export=download"
-    );
+        width: 640,
+        height: 380,
+        url:
+            "https://drive.usercontent.google.com/u/0/uc?id=1zGK-Ss9TIY9_FrreCTls3J3bfC-ICMLX&export=download");
     final material = ARKitMaterial(
       diffuse: _video,
       doubleSided: true,
