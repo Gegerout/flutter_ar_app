@@ -23,19 +23,19 @@ class _TapScreenState extends State<TapScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Tap Gesture Sample')),
-    body: ARKitSceneView(
-      enableTapRecognizer: true,
-      onARKitViewCreated: onARKitViewCreated,
-    ),
-  );
+        appBar: AppBar(title: const Text('Tap Gesture Sample')),
+        body: ARKitSceneView(
+          enableTapRecognizer: true,
+          onARKitViewCreated: onARKitViewCreated,
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
     this.arkitController.onNodeTap = (nodes) => onNodeTapHandler(nodes);
 
     final material =
-    ARKitMaterial(diffuse: ARKitMaterialProperty.color(Colors.yellow));
+        ARKitMaterial(diffuse: ARKitMaterialProperty.color(Colors.yellow));
     sphere = ARKitSphere(
       materials: [material],
       radius: 0.1,
@@ -52,10 +52,10 @@ class _TapScreenState extends State<TapScreen> {
   void onNodeTapHandler(List<String> nodesList) {
     final name = nodesList.first;
     final color =
-    (sphere!.materials.value!.first.diffuse as ARKitMaterialColor).color ==
-        Colors.yellow
-        ? Colors.blue
-        : Colors.yellow;
+        (sphere!.materials.value!.first.diffuse as ARKitMaterialColor).color ==
+                Colors.yellow
+            ? Colors.blue
+            : Colors.yellow;
     sphere!.materials.value = [
       ARKitMaterial(diffuse: ARKitMaterialProperty.color(color))
     ];
