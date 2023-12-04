@@ -34,13 +34,13 @@ class _SnapshotSceneScreenState extends State<SnapshotSceneScreen> {
             final image = await arkitController.snapshot();
             if (context.mounted) {
               await Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => SnapshotPreview(
-                  imageProvider: image,
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SnapshotPreview(
+                    imageProvider: image,
+                  ),
                 ),
-              ),
-            );
+              );
             }
           } catch (e) {
             if (kDebugMode) {
