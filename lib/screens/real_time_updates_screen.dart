@@ -58,7 +58,7 @@ class _RealTimeUpdatesScreenState extends State<RealTimeUpdatesScreen> {
         this.arkitController.performHitTest(x: 0.25, y: 0.75).then((results) {
           if (results.isNotEmpty) {
             final point = results.firstWhereOrNull(
-                  (o) => o.type == ARKitHitTestResultType.featurePoint,
+              (o) => o.type == ARKitHitTestResultType.featurePoint,
             );
             if (point == null) {
               return;
