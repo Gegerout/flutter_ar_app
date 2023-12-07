@@ -26,13 +26,13 @@ class _PlaneDetectionScreenState extends State<PlaneDetectionScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Plane Detection Sample')),
-    body: ARKitSceneView(
-      showFeaturePoints: true,
-      planeDetection: ARPlaneDetection.horizontal,
-      onARKitViewCreated: onARKitViewCreated,
-    ),
-  );
+        appBar: AppBar(title: const Text('Plane Detection Sample')),
+        body: ARKitSceneView(
+          showFeaturePoints: true,
+          planeDetection: ARPlaneDetection.horizontal,
+          onARKitViewCreated: onARKitViewCreated,
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
