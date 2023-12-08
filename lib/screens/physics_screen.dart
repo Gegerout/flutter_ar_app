@@ -35,7 +35,7 @@ class _PhysicsScreenState extends State<PhysicsScreen> {
 
   void _addSphere(ARKitController controller) {
     final material =
-    ARKitMaterial(diffuse: ARKitMaterialProperty.color(Colors.blue));
+        ARKitMaterial(diffuse: ARKitMaterialProperty.color(Colors.blue));
     final sphere = ARKitSphere(materials: [material], radius: 0.1);
     final node = ARKitNode(
         geometry: sphere,
