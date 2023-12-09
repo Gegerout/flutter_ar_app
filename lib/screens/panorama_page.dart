@@ -22,11 +22,11 @@ class _PanoramaScreenState extends State<PanoramaScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Panorama Sample')),
-    body: ARKitSceneView(
-      onARKitViewCreated: onARKitViewCreated,
-    ),
-  );
+        appBar: AppBar(title: const Text('Panorama Sample')),
+        body: ARKitSceneView(
+          onARKitViewCreated: onARKitViewCreated,
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
