@@ -27,14 +27,14 @@ class _OcclusionScreenState extends State<OcclusionScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Occlusion Sample')),
-    body: ARKitSceneView(
-      showFeaturePoints: true,
-      enableTapRecognizer: true,
-      planeDetection: ARPlaneDetection.horizontalAndVertical,
-      onARKitViewCreated: onARKitViewCreated,
-    ),
-  );
+        appBar: AppBar(title: const Text('Occlusion Sample')),
+        body: ARKitSceneView(
+          showFeaturePoints: true,
+          enableTapRecognizer: true,
+          planeDetection: ARPlaneDetection.horizontalAndVertical,
+          onARKitViewCreated: onARKitViewCreated,
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
@@ -42,7 +42,7 @@ class _OcclusionScreenState extends State<OcclusionScreen> {
     this.arkitController.onUpdateNodeForAnchor = _handleUpdateAnchor;
     this.arkitController.onARTap = (ar) {
       final point = ar.firstWhereOrNull(
-            (o) => o.type == ARKitHitTestResultType.featurePoint,
+        (o) => o.type == ARKitHitTestResultType.featurePoint,
       );
       if (point != null) {
         _onARTapHandler(point);
@@ -90,7 +90,7 @@ class _OcclusionScreenState extends State<OcclusionScreen> {
       point.worldTransform.getColumn(3).z,
     );
     final material =
-    ARKitMaterial(diffuse: ARKitMaterialProperty.color(Colors.red));
+        ARKitMaterial(diffuse: ARKitMaterialProperty.color(Colors.red));
     final sphere = ARKitSphere(
       radius: 0.006,
       materials: [material],
