@@ -36,7 +36,7 @@ class _MeasureScreenState extends State<MeasureScreen> {
     this.arkitController = arkitController;
     this.arkitController.onARTap = (ar) {
       final point = ar.firstWhereOrNull(
-            (o) => o.type == ARKitHitTestResultType.featurePoint,
+        (o) => o.type == ARKitHitTestResultType.featurePoint,
       );
       if (point != null) {
         _onARTapHandler(point);
