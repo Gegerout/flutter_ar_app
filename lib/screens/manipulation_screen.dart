@@ -25,14 +25,14 @@ class _ManipulationScreenState extends State<ManipulationScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Manipulation Sample')),
-    body: ARKitSceneView(
-      enablePinchRecognizer: true,
-      enablePanRecognizer: true,
-      enableRotationRecognizer: true,
-      onARKitViewCreated: onARKitViewCreated,
-    ),
-  );
+        appBar: AppBar(title: const Text('Manipulation Sample')),
+        body: ARKitSceneView(
+          enablePinchRecognizer: true,
+          enablePanRecognizer: true,
+          enableRotationRecognizer: true,
+          onARKitViewCreated: onARKitViewCreated,
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
@@ -52,7 +52,7 @@ class _ManipulationScreenState extends State<ManipulationScreen> {
       ),
     );
     final box =
-    ARKitBox(materials: [material], width: 0.1, height: 0.1, length: 0.1);
+        ARKitBox(materials: [material], width: 0.1, height: 0.1, length: 0.1);
 
     final node = ARKitNode(
       geometry: box,
@@ -64,7 +64,7 @@ class _ManipulationScreenState extends State<ManipulationScreen> {
 
   void _onPinchHandler(List<ARKitNodePinchResult> pinch) {
     final pinchNode = pinch.firstWhereOrNull(
-          (e) => e.nodeName == boxNode?.name,
+      (e) => e.nodeName == boxNode?.name,
     );
     if (pinchNode != null) {
       final scale = vector.Vector3.all(pinchNode.scale);
@@ -84,7 +84,7 @@ class _ManipulationScreenState extends State<ManipulationScreen> {
 
   void _onRotationHandler(List<ARKitNodeRotationResult> rotation) {
     final rotationNode = rotation.firstWhereOrNull(
-          (e) => e.nodeName == boxNode?.name,
+      (e) => e.nodeName == boxNode?.name,
     );
     if (rotationNode != null) {
       final rotation = boxNode?.eulerAngles ??
