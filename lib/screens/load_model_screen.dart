@@ -21,20 +21,20 @@ class _LoadModelScreenState extends State<LoadModelScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Load .gltf or .glb')),
-    body: ARKitSceneView(
-      showFeaturePoints: true,
-      enableTapRecognizer: true,
-      planeDetection: ARPlaneDetection.horizontalAndVertical,
-      onARKitViewCreated: onARKitViewCreated,
-    ),
-  );
+        appBar: AppBar(title: const Text('Load .gltf or .glb')),
+        body: ARKitSceneView(
+          showFeaturePoints: true,
+          enableTapRecognizer: true,
+          planeDetection: ARPlaneDetection.horizontalAndVertical,
+          onARKitViewCreated: onARKitViewCreated,
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
     this.arkitController.onARTap = (ar) {
       final point = ar.firstWhereOrNull(
-            (o) => o.type == ARKitHitTestResultType.featurePoint,
+        (o) => o.type == ARKitHitTestResultType.featurePoint,
       );
       if (point != null) {
         _onARTapHandler(point);
