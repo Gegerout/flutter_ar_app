@@ -44,15 +44,15 @@ class HomeScreen extends StatelessWidget {
         'Measure',
         'Measures distances',
         Icons.linear_scale,
-        () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const MeasureScreen())),
+        () => Navigator.of(context).push<void>(
+            MaterialPageRoute(builder: (c) => const MeasureScreen())),
       ),
       ScreenModel(
         'Physics',
         'A sphere and a plane with dynamic and static physics',
         Icons.file_download,
-        () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const PhysicsScreen())),
+        () => Navigator.of(context).push<void>(
+            MaterialPageRoute(builder: (c) => const PhysicsScreen())),
       ),
       ScreenModel(
         'Occlusion',
