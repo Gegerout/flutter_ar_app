@@ -26,12 +26,12 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Face Detection Sample')),
-    body: ARKitSceneView(
-      configuration: ARKitConfiguration.faceTracking,
-      onARKitViewCreated: onARKitViewCreated,
-    ),
-  );
+        appBar: AppBar(title: const Text('Face Detection Sample')),
+        body: ARKitSceneView(
+          configuration: ARKitConfiguration.faceTracking,
+          onARKitViewCreated: onARKitViewCreated,
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
