@@ -23,13 +23,13 @@ class _CustomObjectScreenState extends State<CustomObjectScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Custom object on plane Sample')),
-    body: ARKitSceneView(
-      showFeaturePoints: true,
-      planeDetection: ARPlaneDetection.horizontal,
-      onARKitViewCreated: onARKitViewCreated,
-    ),
-  );
+        appBar: AppBar(title: const Text('Custom object on plane Sample')),
+        body: ARKitSceneView(
+          showFeaturePoints: true,
+          planeDetection: ARPlaneDetection.horizontal,
+          onARKitViewCreated: onARKitViewCreated,
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
