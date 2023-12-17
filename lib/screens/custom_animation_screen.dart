@@ -24,27 +24,27 @@ class _CustomAnimationScreenState extends State<CustomAnimationScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Custom Animation')),
-    floatingActionButton: FloatingActionButton(
-      child: Icon(idle ? Icons.play_arrow : Icons.stop),
-      onPressed: () async {
-        if (idle) {
-          await arkitController.playAnimation(
-              key: 'dancing',
-              sceneName: 'model.scnassets/twist_danceFixed',
-              animationIdentifier: 'twist_danceFixed-1');
-        } else {
-          await arkitController.stopAnimation(key: 'dancing');
-        }
-        setState(() => idle = !idle);
-      },
-    ),
-    body: ARKitSceneView(
-      showFeaturePoints: true,
-      planeDetection: ARPlaneDetection.horizontal,
-      onARKitViewCreated: onARKitViewCreated,
-    ),
-  );
+        appBar: AppBar(title: const Text('Custom Animation')),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(idle ? Icons.play_arrow : Icons.stop),
+          onPressed: () async {
+            if (idle) {
+              await arkitController.playAnimation(
+                  key: 'dancing',
+                  sceneName: 'model.scnassets/twist_danceFixed',
+                  animationIdentifier: 'twist_danceFixed-1');
+            } else {
+              await arkitController.stopAnimation(key: 'dancing');
+            }
+            setState(() => idle = !idle);
+          },
+        ),
+        body: ARKitSceneView(
+          showFeaturePoints: true,
+          planeDetection: ARPlaneDetection.horizontal,
+          onARKitViewCreated: onARKitViewCreated,
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
