@@ -23,12 +23,12 @@ class _BodyTrackingScreenState extends State<BodyTrackingScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Body Tracking Sample')),
-    body: ARKitSceneView(
-      configuration: ARKitConfiguration.bodyTracking,
-      onARKitViewCreated: onARKitViewCreated,
-    ),
-  );
+        appBar: AppBar(title: const Text('Body Tracking Sample')),
+        body: ARKitSceneView(
+          configuration: ARKitConfiguration.bodyTracking,
+          onARKitViewCreated: onARKitViewCreated,
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
@@ -41,7 +41,7 @@ class _BodyTrackingScreenState extends State<BodyTrackingScreen> {
       return;
     }
     final transform =
-    anchor.skeleton.modelTransformsFor(ARKitSkeletonJointName.leftHand);
+        anchor.skeleton.modelTransformsFor(ARKitSkeletonJointName.leftHand);
     hand = _createSphere(transform!);
     arkitController.add(hand!, parentNodeName: anchor.nodeName);
   }
@@ -62,7 +62,7 @@ class _BodyTrackingScreenState extends State<BodyTrackingScreen> {
   void _handleUpdateAnchor(ARKitAnchor anchor) {
     if (anchor is ARKitBodyAnchor && mounted) {
       final transform =
-      anchor.skeleton.modelTransformsFor(ARKitSkeletonJointName.leftHand)!;
+          anchor.skeleton.modelTransformsFor(ARKitSkeletonJointName.leftHand)!;
       final position = vector.Vector3(
         transform.getColumn(3).x,
         transform.getColumn(3).y,
