@@ -4,10 +4,10 @@ import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:flutter/material.dart';
 
 ARKitNode createSphere() => ARKitNode(
-  geometry:
-  ARKitSphere(materials: createRandomColorMaterial(), radius: 0.04),
-  position: vector.Vector3(-0.1, -0.1, -0.5),
-);
+      geometry:
+          ARKitSphere(materials: createRandomColorMaterial(), radius: 0.04),
+      position: vector.Vector3(-0.1, -0.1, -0.5),
+    );
 
 List<ARKitMaterial> createRandomColorMaterial() {
   return [
