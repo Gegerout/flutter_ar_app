@@ -1,5 +1,6 @@
 import 'package:ar_app/utils/screen_card.dart';
 import '../models/screen_model.dart';
+import 'earth_screen.dart';
 import 'panorama_page.dart';
 import 'physics_screen.dart';
 import 'plane_detection_screen.dart';
@@ -144,6 +145,13 @@ class HomeScreen extends StatelessWidget {
         Icons.accessibility_new,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const CustomAnimationScreen())),
+      ),
+      ScreenModel(
+        'Earth',
+        'Sphere with an image texture and rotation animation.',
+        Icons.language,
+            () => Navigator.of(context)
+            .push<void>(MaterialPageRoute(builder: (c) => const EarthPage())),
       ),
       ScreenModel(
         'Distance tracking',
