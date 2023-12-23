@@ -4,16 +4,16 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
 
-class EarthPage extends StatefulWidget {
-  const EarthPage({super.key});
+class EarthScreen extends StatefulWidget {
+  const EarthScreen({super.key});
 
   @override
-  State<EarthPage> createState() {
-    return _EarthPageState();
+  State<EarthScreen> createState() {
+    return _EarthScreenState();
   }
 }
 
-class _EarthPageState extends State<EarthPage> {
+class _EarthScreenState extends State<EarthScreen> {
   late ARKitController arkitController;
   Timer? timer;
 

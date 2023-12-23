@@ -151,7 +151,7 @@ class HomeScreen extends StatelessWidget {
         'Sphere with an image texture and rotation animation.',
         Icons.language,
             () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const EarthPage())),
+            .push<void>(MaterialPageRoute(builder: (c) => const EarthScreen())),
       ),
       ScreenModel(
         'Distance tracking',
