@@ -1,6 +1,7 @@
 import 'package:ar_app/utils/screen_card.dart';
 import '../models/screen_model.dart';
 import 'earth_screen.dart';
+import 'hello_world_screen.dart';
 import 'panorama_page.dart';
 import 'physics_screen.dart';
 import 'plane_detection_screen.dart';
@@ -27,6 +28,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final samples = [
+      ScreenModel(
+        'Hello World',
+        'The simplest scene with all geometries.',
+        Icons.home,
+            () => Navigator.of(context)
+            .push<void>(MaterialPageRoute(builder: (c) => const HelloWorldPage())),
+      ),
       ScreenModel(
         'Tap',
         'Sphere which handles tap event.',
