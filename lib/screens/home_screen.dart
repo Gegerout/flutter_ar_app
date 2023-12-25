@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
         'The simplest scene with all geometries.',
         Icons.home,
             () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const HelloWorldPage())),
+            .push<void>(MaterialPageRoute(builder: (c) => const HelloWorldScreen())),
       ),
       ScreenModel(
         'Tap',
