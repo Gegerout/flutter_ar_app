@@ -32,8 +32,8 @@ class HomeScreen extends StatelessWidget {
         'Hello World',
         'The simplest scene with all geometries.',
         Icons.home,
-            () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const HelloWorldScreen())),
+        () => Navigator.of(context).push<void>(
+            MaterialPageRoute(builder: (c) => const HelloWorldScreen())),
       ),
       ScreenModel(
         'Tap',
@@ -158,7 +158,7 @@ class HomeScreen extends StatelessWidget {
         'Earth',
         'Sphere with an image texture and rotation animation.',
         Icons.language,
-            () => Navigator.of(context)
+        () => Navigator.of(context)
             .push<void>(MaterialPageRoute(builder: (c) => const EarthScreen())),
       ),
       ScreenModel(
