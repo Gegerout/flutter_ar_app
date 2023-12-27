@@ -29,7 +29,7 @@ class _HelloWorldPagState extends State<HelloWorldScreen> {
       body: ARKitSceneView(
         onARKitViewCreated: onARKitViewCreated,
         environmentTexturing:
-        ARWorldTrackingConfigurationEnvironmentTexturing.automatic,
+            ARWorldTrackingConfigurationEnvironmentTexturing.automatic,
       ));
 
   void onARKitViewCreated(ARKitController arkitController) {
@@ -48,10 +48,10 @@ class _HelloWorldPagState extends State<HelloWorldScreen> {
   }
 
   ARKitNode _createSphere() => ARKitNode(
-    geometry:
-    ARKitSphere(materials: _createRandomColorMaterial(), radius: 0.04),
-    position: vector.Vector3(-0.1, -0.1, -0.5),
-  );
+        geometry:
+            ARKitSphere(materials: _createRandomColorMaterial(), radius: 0.04),
+        position: vector.Vector3(-0.1, -0.1, -0.5),
+      );
 
   ARKitNode _createPlane() {
     final plane = ARKitPlane(
@@ -88,67 +88,68 @@ class _HelloWorldPagState extends State<HelloWorldScreen> {
   }
 
   ARKitNode _createBox() => ARKitNode(
-    geometry: ARKitBox(
-        width: 0.06,
-        height: 0.06,
-        length: 0.06,
-        chamferRadius: 0.01,
-        materials: _createRandomColorMaterial()),
-    position: vector.Vector3(-0.1, 0, -0.5),
-  );
+        geometry: ARKitBox(
+            width: 0.06,
+            height: 0.06,
+            length: 0.06,
+            chamferRadius: 0.01,
+            materials: _createRandomColorMaterial()),
+        position: vector.Vector3(-0.1, 0, -0.5),
+      );
 
   ARKitNode _createCylinder() => ARKitNode(
-    geometry: ARKitCylinder(
-        radius: 0.05,
-        height: 0.09,
-        materials: _createRandomColorMaterial()),
-    position: vector.Vector3(-0.1, 0.1, -0.5),
-  );
+        geometry: ARKitCylinder(
+            radius: 0.05,
+            height: 0.09,
+            materials: _createRandomColorMaterial()),
+        position: vector.Vector3(-0.1, 0.1, -0.5),
+      );
 
   ARKitNode _createCone() => ARKitNode(
-    geometry: ARKitCone(
-        topRadius: 0,
-        bottomRadius: 0.05,
-        height: 0.09,
-        materials: _createRandomColorMaterial()),
-    position: vector.Vector3(0, -0.1, -0.5),
-  );
+        geometry: ARKitCone(
+            topRadius: 0,
+            bottomRadius: 0.05,
+            height: 0.09,
+            materials: _createRandomColorMaterial()),
+        position: vector.Vector3(0, -0.1, -0.5),
+      );
 
   ARKitNode _createPyramid() => ARKitNode(
-    geometry: ARKitPyramid(
-        width: 0.09,
-        height: 0.09,
-        length: 0.09,
-        materials: _createRandomColorMaterial()),
-    position: vector.Vector3(0, -0.05, -0.5),
-  );
+        geometry: ARKitPyramid(
+            width: 0.09,
+            height: 0.09,
+            length: 0.09,
+            materials: _createRandomColorMaterial()),
+        position: vector.Vector3(0, -0.05, -0.5),
+      );
 
   ARKitNode _createTube() => ARKitNode(
-    geometry: ARKitTube(
-        innerRadius: 0.03,
-        outerRadius: 0.05,
-        height: 0.09,
-        materials: _createRandomColorMaterial()),
-    position: vector.Vector3(0.1, 0.1, -0.5),
-  );
+        geometry: ARKitTube(
+            innerRadius: 0.03,
+            outerRadius: 0.05,
+            height: 0.09,
+            materials: _createRandomColorMaterial()),
+        position: vector.Vector3(0.1, 0.1, -0.5),
+      );
 
   ARKitNode _createTorus() => ARKitNode(
-    geometry: ARKitTorus(
-        ringRadius: 0.04,
-        pipeRadius: 0.02,
-        materials: _createRandomColorMaterial()),
-    position: vector.Vector3(0.1, -0.1, -0.5),
-  );
+        geometry: ARKitTorus(
+            ringRadius: 0.04,
+            pipeRadius: 0.02,
+            materials: _createRandomColorMaterial()),
+        position: vector.Vector3(0.1, -0.1, -0.5),
+      );
 
   ARKitNode _createCapsule() => ARKitNode(
-    geometry: ARKitCapsule(
-        capRadius: 0.02,
-        height: 0.06,
-        materials: _createRandomColorMaterial()),
-    position: vector.Vector3(0.1, 0, -0.5),
-  );
+        geometry: ARKitCapsule(
+            capRadius: 0.02,
+            height: 0.06,
+            materials: _createRandomColorMaterial()),
+        position: vector.Vector3(0.1, 0, -0.5),
+      );
 
   final _rnd = math.Random();
+
   List<ARKitMaterial> _createRandomColorMaterial() {
     return [
       ARKitMaterial(
