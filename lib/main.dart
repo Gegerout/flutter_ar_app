@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
     final nodeAr = ARKitNode(
         geometry: ARKitSphere(materials: [
       ARKitMaterial(
-          diffuse: const ARKitMaterialImage("assets/world.jpg"),
+          diffuse: ARKitMaterialProperty.image("assets/world.jpg"),
           doubleSided: true)
     ], radius: 1), position: Vector3(0,0,0));
     controller.add(nodeAr);
