@@ -24,7 +24,7 @@ class _HelloWorldPagState extends State<HelloWorldScreen> {
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
-        title: const Text('ARKit in Flutter'),
+        title: const Text('AR in Flutter'),
       ),
       body: ARKitSceneView(
         onARKitViewCreated: onARKitViewCreated,
@@ -72,7 +72,7 @@ class _HelloWorldPagState extends State<HelloWorldScreen> {
 
   ARKitNode _createText() {
     final text = ARKitText(
-      text: 'Flutter',
+      text: 'BANANA',
       extrusionDepth: 1,
       materials: [
         ARKitMaterial(
