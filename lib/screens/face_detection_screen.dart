@@ -1,5 +1,6 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
 class FaceDetectionScreen extends StatefulWidget {
@@ -13,6 +14,7 @@ class FaceDetectionScreen extends StatefulWidget {
 
 class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
   late ARKitController arkitController;
+  final player = AudioPlayer();
   ARKitNode? node;
 
   ARKitNode? leftEye;
@@ -87,8 +89,8 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
     if (anchor is ARKitFaceAnchor && mounted) {
       final faceAnchor = anchor;
       final smile = faceAnchor.blendShapes["mouthSmile_L"] ?? 0;
-      final jaw = faceAnchor.blendShapes["jawOpen"] ?? 0;
-      final mouse = faceAnchor.blendShapes["mouseUpperUpRight"] ?? 0;
+      // final jaw = faceAnchor.blendShapes["jawOpen"] ?? 0;
+      // final mouse = faceAnchor.blendShapes["mouseUpperUpRight"] ?? 0;
       // if(mouse > 0.5) {
       //   setState(() {
       //     emotion = "Angry";
@@ -100,10 +102,16 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
       //   });
       // }
       if (smile > 0.5) {
+        player
+            .setAsset("assets/audio/happy.mp3")
+            .then((value) => player.play());
         setState(() {
           emotion = "Happy";
         });
       } else if (smile < 0.00001) {
+        player
+            .setAsset("assets/audio/sad.mp3")
+            .then((value) => player.play());
         setState(() {
           emotion = "Sad";
         });
