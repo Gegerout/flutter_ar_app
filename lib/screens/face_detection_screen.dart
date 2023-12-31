@@ -14,7 +14,8 @@ class FaceDetectionScreen extends StatefulWidget {
 
 class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
   late ARKitController arkitController;
-  final player = AudioPlayer();
+  final happyPlayer = AudioPlayer();
+  final sadPlayer = AudioPlayer();
   ARKitNode? node;
 
   ARKitNode? leftEye;
@@ -102,16 +103,18 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
       //   });
       // }
       if (smile > 0.5) {
-        player
-            .setAsset("assets/audio/happy.mp3")
-            .then((value) => player.play());
+        sadPlayer.stop();
+        happyPlayer
+            .setAsset("assets/audio/happy.mp3");
+        happyPlayer.play();
         setState(() {
           emotion = "Happy";
         });
       } else if (smile < 0.00001) {
-        player
-            .setAsset("assets/audio/sad.mp3")
-            .then((value) => player.play());
+        happyPlayer.stop();
+        sadPlayer
+            .setAsset("assets/audio/happy.mp3");
+        sadPlayer.play();
         setState(() {
           emotion = "Sad";
         });
