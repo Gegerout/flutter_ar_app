@@ -28,6 +28,7 @@ flutter:
   assets:
     - assets/images/
     - assets/models/
+    - assets/audio/
 
 flutter_launcher_icons:
   ios: true
