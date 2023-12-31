@@ -50,6 +50,10 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
       );
 
   void onARKitViewCreated(ARKitController arkitController) {
+    happyPlayer
+        .setAsset("assets/audio/happy.mp3");
+    sadPlayer
+        .setAsset("assets/audio/happy.mp3");
     this.arkitController = arkitController;
     this.arkitController.onAddNodeForAnchor = _handleAddAnchor;
     this.arkitController.onUpdateNodeForAnchor = _handleUpdateAnchor;
@@ -104,16 +108,12 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
       // }
       if (smile > 0.5) {
         sadPlayer.stop();
-        happyPlayer
-            .setAsset("assets/audio/happy.mp3");
         happyPlayer.play();
         setState(() {
           emotion = "Happy";
         });
       } else if (smile < 0.00001) {
         happyPlayer.stop();
-        sadPlayer
-            .setAsset("assets/audio/happy.mp3");
         sadPlayer.play();
         setState(() {
           emotion = "Sad";
