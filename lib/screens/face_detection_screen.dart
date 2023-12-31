@@ -18,7 +18,7 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
   ARKitNode? leftEye;
   ARKitNode? rightEye;
 
-  String emotion = "No emotions(";
+  String emotion = "";
 
   @override
   void dispose() {
@@ -39,7 +39,7 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
                 alignment: Alignment.topCenter,
                 child: Text(
                   emotion,
-                  style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                  style: Theme.of(context).textTheme.displayMedium?.copyWith(
                       fontWeight: FontWeight.bold, color: Colors.white),
                 ))
           ],
@@ -86,20 +86,20 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
   void _handleUpdateAnchor(ARKitAnchor anchor) {
     if (anchor is ARKitFaceAnchor && mounted) {
       final faceAnchor = anchor;
-      final smile = faceAnchor.blendShapes["mouthSmile_L"]!;
-      final jaw = faceAnchor.blendShapes["jawOpen"]!;
-      final mouse = faceAnchor.blendShapes["mouseUpperUpRight"]!;
-      if(mouse > 0.5) {
-        setState(() {
-          emotion = "Angry";
-        });
-      }
-      else if(jaw > 0.5) {
-        setState(() {
-          emotion = "Surprised";
-        });
-      }
-      else if (smile > 0.5) {
+      final smile = faceAnchor.blendShapes["mouthSmile_L"] ?? 0;
+      final jaw = faceAnchor.blendShapes["jawOpen"] ?? 0;
+      final mouse = faceAnchor.blendShapes["mouseUpperUpRight"] ?? 0;
+      // if(mouse > 0.5) {
+      //   setState(() {
+      //     emotion = "Angry";
+      //   });
+      // }
+      // else if(jaw > 0.5) {
+      //   setState(() {
+      //     emotion = "Surprised";
+      //   });
+      // }
+      if (smile > 0.5) {
         setState(() {
           emotion = "Happy";
         });
