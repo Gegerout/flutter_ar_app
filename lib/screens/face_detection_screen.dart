@@ -25,6 +25,8 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
 
   @override
   void dispose() {
+    happyPlayer.dispose();
+    sadPlayer.dispose();
     arkitController.dispose();
     super.dispose();
   }
