@@ -26,11 +26,11 @@ class _EarthScreenState extends State<EarthScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Earth Sample')),
-    body: ARKitSceneView(
-      onARKitViewCreated: onARKitViewCreated,
-    ),
-  );
+        appBar: AppBar(title: const Text('Earth Sample')),
+        body: ARKitSceneView(
+          onARKitViewCreated: onARKitViewCreated,
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
