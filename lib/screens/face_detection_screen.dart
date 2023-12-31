@@ -18,7 +18,7 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
   ARKitNode? leftEye;
   ARKitNode? rightEye;
 
-  String emotion = "";
+  String emotion = "No emotions(";
 
   @override
   void dispose() {
