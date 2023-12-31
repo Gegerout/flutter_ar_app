@@ -54,6 +54,8 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
         .setAsset("assets/audio/happy.mp3");
     sadPlayer
         .setAsset("assets/audio/sad.mp3");
+    happyPlayer.setLoopMode(LoopMode.all);
+    sadPlayer.setLoopMode(LoopMode.all);
     this.arkitController = arkitController;
     this.arkitController.onAddNodeForAnchor = _handleAddAnchor;
     this.arkitController.onUpdateNodeForAnchor = _handleUpdateAnchor;
@@ -119,6 +121,8 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
           emotion = "Sad";
         });
       } else {
+        sadPlayer.stop();
+        happyPlayer.stop();
         setState(() {
           emotion = "";
         });
