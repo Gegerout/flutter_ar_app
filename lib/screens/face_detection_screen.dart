@@ -53,7 +53,7 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
     happyPlayer
         .setAsset("assets/audio/happy.mp3");
     sadPlayer
-        .setAsset("assets/audio/happy.mp3");
+        .setAsset("assets/audio/sad.mp3");
     this.arkitController = arkitController;
     this.arkitController.onAddNodeForAnchor = _handleAddAnchor;
     this.arkitController.onUpdateNodeForAnchor = _handleUpdateAnchor;
