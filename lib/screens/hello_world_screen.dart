@@ -72,7 +72,7 @@ class _HelloWorldPagState extends State<HelloWorldScreen> {
 
   ARKitNode _createText() {
     final text = ARKitText(
-      text: 'BANANA',
+      text: 'Happy New Year 2024!',
       extrusionDepth: 1,
       materials: [
         ARKitMaterial(
