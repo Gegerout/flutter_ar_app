@@ -37,7 +37,7 @@ class _EarthScreenState extends State<EarthScreen> {
 
     final material = ARKitMaterial(
       lightingModelName: ARKitLightingModel.lambert,
-      diffuse: ARKitMaterialProperty.image('earth.jpg'),
+      diffuse: ARKitMaterialProperty.image('assets/images/world.jpg'),
     );
     final sphere = ARKitSphere(
       materials: [material],
