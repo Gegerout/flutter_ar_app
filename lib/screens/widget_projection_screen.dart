@@ -40,6 +40,13 @@ class _WidgetProjectionScreenState extends State<WidgetProjectionScreen> {
             worldAlignment: ARWorldAlignment.camera,
             configuration: ARKitConfiguration.imageTracking,
           ),
+          Align(
+              alignment: Alignment.topCenter,
+              child: Text(
+                "$width, $height",
+                style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                    fontWeight: FontWeight.bold, color: Colors.white),
+              )),
           Positioned(
             left: x,
             top: y,
@@ -110,7 +117,7 @@ class _WidgetProjectionScreenState extends State<WidgetProjectionScreen> {
       x = pointsViewportSpaceResults[2]!.x;
       y = pointsViewportSpaceResults[2]!.y;
       this.width = pointsViewportSpaceResults[0]!
-          .distanceTo(pointsViewportSpaceResults[3]!);
+          .distanceTo(pointsViewportSpaceResults[3]!) - 5;
       this.height = pointsViewportSpaceResults[1]!
           .distanceTo(pointsViewportSpaceResults[2]!);
     });
