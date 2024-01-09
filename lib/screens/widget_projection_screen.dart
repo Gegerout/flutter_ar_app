@@ -16,7 +16,7 @@ class _WidgetProjectionScreenState extends State<WidgetProjectionScreen> {
   late ARKitController arkitController;
   String anchorId = '';
   double x = 0, y = 0;
-  double width = 1, height = 1.42;
+  double width = 1, height = 1;
   Matrix4 transform = Matrix4.identity();
 
   @override
