@@ -117,9 +117,9 @@ class _WidgetProjectionScreenState extends State<WidgetProjectionScreen> {
       x = pointsViewportSpaceResults[2]!.x;
       y = pointsViewportSpaceResults[2]!.y;
       this.width = pointsViewportSpaceResults[0]!
-          .distanceTo(pointsViewportSpaceResults[3]!) - 200;
+          .distanceTo(pointsViewportSpaceResults[3]!) - 170;
       this.height = pointsViewportSpaceResults[1]!
-          .distanceTo(pointsViewportSpaceResults[2]!);
+          .distanceTo(pointsViewportSpaceResults[2]!) - 70;
     });
   }
 }
