@@ -6,6 +6,9 @@
   "resources" : [
     {
       "filename" : "world.arreferenceimage"
+    },
+    {
+      "filename" : "book.arreferenceimage"
     }
   ]
 }
