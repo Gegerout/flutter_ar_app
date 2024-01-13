@@ -5,11 +5,11 @@ import Flutter
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
 
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
-    let appIconChannel = FlutterMethodChannel(name: "appIconChannel", binaryMessenger: controller)
+    let appIconChannel = FlutterMethodChannel(name: "appIconChannel", binaryMessenger: controller as! FlutterBinaryMessenger)
 
     appIconChannel.setMethodCallHandler({
         [weak self](call: FlutterMethodCall, result: FlutterResult) -> Void in
