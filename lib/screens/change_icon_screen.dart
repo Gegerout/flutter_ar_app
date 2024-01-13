@@ -16,7 +16,7 @@ class ChangeIconScreen extends StatelessWidget {
           children: <Widget>[
             IconSelector(
               appIcon: IconType.Standart,
-              imageAsset: 'assets/icon.png',
+              imageAsset: 'assets/icon/icon.png',
               name: 'Normal',
             ),
             IconSelector(
