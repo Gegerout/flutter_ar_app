@@ -1,5 +1,6 @@
 import 'package:ar_app/utils/screen_card.dart';
 import '../models/screen_model.dart';
+import 'change_icon_screen.dart';
 import 'earth_screen.dart';
 import 'hello_world_screen.dart';
 import 'panorama_page.dart';
@@ -167,6 +168,13 @@ class HomeScreen extends StatelessWidget {
         Icons.blur_on,
         () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const DistanceTrackingScreen())),
+      ),
+      ScreenModel(
+        'Change icon',
+        'Changes app icon',
+        Icons.blur_on,
+            () => Navigator.of(context).push<void>(
+            MaterialPageRoute(builder: (c) => const ChangeIconScreen())),
       )
     ];
 
