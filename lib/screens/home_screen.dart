@@ -172,7 +172,7 @@ class HomeScreen extends StatelessWidget {
       ScreenModel(
         'Change icon',
         'Changes app icon',
-        Icons.blur_on,
+        Icons.app_registration,
             () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const ChangeIconScreen())),
       )
