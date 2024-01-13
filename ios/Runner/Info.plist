@@ -47,43 +47,43 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>CFBundleIcons</key>
+         <dict>
+             <key>CFBundleAlternateIcons</key>
+             <dict>
+                 <key>Yellow</key>
+                 <dict>
+                     <key>CFBundleIconFiles</key>
+                     <array>
+                         <string>icon-yellow</string>
+                    </array>
+                 </dict>
+                 <key>Red</key>
+                 <dict>
+                     <key>CFBundleIconFiles</key>
+                     <array>
+                         <string>icon-red</string>
+                     </array>
+                 </dict>
+                 <key>NewRed</key>
+                  <dict>
+                      <key>CFBundleIconFiles</key>
+                      <array>
+                          <string>icon-new_red</string>
+                     </array>
+                  </dict>
+             </dict>
+             <key>CFBundlePrimaryIcon</key>
+             <dict>
+                 <key>CFBundleIconFiles</key>
+                 <array/>
+         </dict>
 	<key>NSCameraUsageDescription</key>
     <string>Show 3D models in your space</string>
      <key>NSAppTransportSecurity</key>
      <dict>
           <key>NSAllowsArbitraryLoads</key>
          <true/>
-     </dict>
-     <key>CFBundleIcons</key>
-     <dict>
-         <key>CFBundleAlternateIcons</key>
-         <dict>
-             <key>Yellow</key>
-             <dict>
-                 <key>CFBundleIconFiles</key>
-                 <array>
-                     <string>icon-yellow</string>
-                </array>
-             </dict>
-             <key>Red</key>
-             <dict>
-                 <key>CFBundleIconFiles</key>
-                 <array>
-                     <string>icon-red</string>
-                 </array>
-             </dict>
-             <key>NewRed</key>
-              <dict>
-                  <key>CFBundleIconFiles</key>
-                  <array>
-                      <string>icon-new_red</string>
-                 </array>
-              </dict>
-         </dict>
-         <key>CFBundlePrimaryIcon</key>
-         <dict>
-             <key>CFBundleIconFiles</key>
-             <array/>
      </dict>
 </dict>
 </plist>
