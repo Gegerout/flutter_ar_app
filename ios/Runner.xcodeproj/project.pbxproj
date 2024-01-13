@@ -11,12 +11,6 @@
 		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		405CC09D51FABBF1892043AC /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DC3B8284ACE6CFF68C4BA36 /* Pods_Runner.framework */; };
-		5A4061212B52CDE400F5E782 /* icon-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A40611B2B52CDE400F5E782 /* icon-red@3x.png */; };
-		5A4061222B52CDE400F5E782 /* icon-new_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A40611C2B52CDE400F5E782 /* icon-new_red@3x.png */; };
-		5A4061232B52CDE400F5E782 /* icon-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A40611D2B52CDE400F5E782 /* icon-red@2x.png */; };
-		5A4061242B52CDE400F5E782 /* icon-yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A40611E2B52CDE400F5E782 /* icon-yellow@2x.png */; };
-		5A4061252B52CDE400F5E782 /* icon-yellow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A40611F2B52CDE400F5E782 /* icon-yellow@3x.png */; };
-		5A4061262B52CDE400F5E782 /* icon-new_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4061202B52CDE400F5E782 /* icon-new_red@2x.png */; };
 		5AF62EE52B405871007855BF /* model.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF62EE42B405871007855BF /* model.scnassets */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
@@ -58,12 +52,6 @@
 		331C8081294A63A400263BE5 /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
 		5017F3D4218159CF2AD01B9C /* Pods-RunnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release.xcconfig"; sourceTree = "<group>"; };
-		5A40611B2B52CDE400F5E782 /* icon-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-red@3x.png"; path = "Runner/App Icons/icon-red@3x.png"; sourceTree = SOURCE_ROOT; };
-		5A40611C2B52CDE400F5E782 /* icon-new_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-new_red@3x.png"; path = "Runner/App Icons/icon-new_red@3x.png"; sourceTree = SOURCE_ROOT; };
-		5A40611D2B52CDE400F5E782 /* icon-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-red@2x.png"; path = "Runner/App Icons/icon-red@2x.png"; sourceTree = SOURCE_ROOT; };
-		5A40611E2B52CDE400F5E782 /* icon-yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-yellow@2x.png"; path = "Runner/App Icons/icon-yellow@2x.png"; sourceTree = SOURCE_ROOT; };
-		5A40611F2B52CDE400F5E782 /* icon-yellow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-yellow@3x.png"; path = "Runner/App Icons/icon-yellow@3x.png"; sourceTree = SOURCE_ROOT; };
-		5A4061202B52CDE400F5E782 /* icon-new_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-new_red@2x.png"; path = "Runner/App Icons/icon-new_red@2x.png"; sourceTree = SOURCE_ROOT; };
 		5AF62EE42B405871007855BF /* model.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = model.scnassets; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
