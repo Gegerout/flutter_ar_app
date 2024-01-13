@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/services.dart';
+import 'package:flutter_dynamic_icon/flutter_dynamic_icon.dart';
 
 enum IconType { Standart, Yellow, Red, NewRed }
 
@@ -27,6 +28,6 @@ class AppIcon {
         break;
     }
 
-    return await platform.invokeMethod('changeIcon', iconName);
+    return await FlutterDynamicIcon.setAlternateIconName(iconName);
   }
 }
