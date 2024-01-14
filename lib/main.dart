@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter AR App',
       theme: ThemeData(
         useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFFF2C00))
       ),
       home: const HomeScreen(),
     );
