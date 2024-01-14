@@ -20,6 +20,7 @@ dependencies:
 
 dev_dependencies:
   flutter_launcher_icons: "^0.13.1"
+  flutter_native_splash: "^2.3.7"
   flutter_test:
     sdk: flutter
 
@@ -36,3 +37,10 @@ flutter:
 flutter_launcher_icons:
   ios: true
   image_path: "assets/icon/icon_new_red.png"
+
+flutter_native_splash:
+  ios: true
+  android: false
+  web: false
+  color: "#FFFFFF"
+  image: "assets/icon/icon_launch.png"
