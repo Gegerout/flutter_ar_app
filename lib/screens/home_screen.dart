@@ -1,4 +1,5 @@
 import 'package:ar_app/utils/screen_card.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../models/screen_model.dart';
 import 'change_icon_screen.dart';
 import 'earth_screen.dart';
@@ -173,17 +174,31 @@ class HomeScreen extends StatelessWidget {
         'Change icon',
         'Changes app icon',
         Icons.app_registration,
-            () => Navigator.of(context).push<void>(
+        () => Navigator.of(context).push<void>(
             MaterialPageRoute(builder: (c) => const ChangeIconScreen())),
       )
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AR App'),
+        title: Row(
+          children: [
+            SvgPicture.asset("assets/icon/icon_new_red.svg",
+              colorFilter:
+              const ColorFilter.mode(Color(0xFFFF2C00), BlendMode.srcIn),
+              semanticsLabel: 'A red up arrow', height: 32, width: 32,),
+            const SizedBox(width: 16,),
+            const Text('AR App')
+          ],
+        ),
       ),
-      body:
-          ListView(children: samples.map((s) => ScreenCard(item: s)).toList()),
+      body: ListView(
+          children: samples
+              .map((s) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: ScreenCard(item: s),
+                  ))
+              .toList()),
     );
   }
 }
