@@ -1,4 +1,5 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
@@ -32,9 +33,9 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Face Detection Sample')),
-        body: Stack(
+  Widget build(BuildContext context) => CupertinoPageScaffold(
+        navigationBar: const CupertinoNavigationBar(middle: Text('Face Detection Sample')),
+        child: Stack(
           children: [
             ARKitSceneView(
               configuration: ARKitConfiguration.faceTracking,

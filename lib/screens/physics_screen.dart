@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:arkit_plugin/arkit_plugin.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
@@ -22,9 +23,9 @@ class _PhysicsScreenState extends State<PhysicsScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-      appBar: AppBar(title: const Text('Physics Sample')),
-      body: ARKitSceneView(onARKitViewCreated: onARKitViewCreated));
+  Widget build(BuildContext context) => CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(middle: Text('Physics Sample')),
+      child: ARKitSceneView(onARKitViewCreated: onARKitViewCreated));
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;

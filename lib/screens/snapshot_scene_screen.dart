@@ -1,4 +1,5 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -23,33 +24,33 @@ class _SnapshotSceneScreenState extends State<SnapshotSceneScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-      appBar: AppBar(
-        title: const Text('Snapshot'),
+  Widget build(BuildContext context) => CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('Snapshot'),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.camera_alt),
-        onPressed: () async {
-          try {
-            final image = await arkitController.snapshot();
-            if (context.mounted) {
-              await Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SnapshotPreview(
-                    imageProvider: image,
-                  ),
-                ),
-              );
-            }
-          } catch (e) {
-            if (kDebugMode) {
-              print(e);
-            }
-          }
-        },
-      ),
-      body: ARKitSceneView(onARKitViewCreated: onARKitViewCreated));
+      // floatingActionButton: FloatingActionButton(
+      //   child: const Icon(Icons.camera_alt),
+      //   onPressed: () async {
+      //     try {
+      //       final image = await arkitController.snapshot();
+      //       if (context.mounted) {
+      //         await Navigator.push(
+      //           context,
+      //           MaterialPageRoute(
+      //             builder: (context) => SnapshotPreview(
+      //               imageProvider: image,
+      //             ),
+      //           ),
+      //         );
+      //       }
+      //     } catch (e) {
+      //       if (kDebugMode) {
+      //         print(e);
+      //       }
+      //     }
+      //   },
+      // ),
+      child: ARKitSceneView(onARKitViewCreated: onARKitViewCreated));
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
@@ -67,11 +68,11 @@ class SnapshotPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Image Preview'),
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('Image Preview'),
       ),
-      body: Stack(
+      child: Stack(
         fit: StackFit.expand,
         children: [
           Image(image: imageProvider),

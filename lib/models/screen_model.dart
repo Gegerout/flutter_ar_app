@@ -6,5 +6,5 @@ class ScreenModel {
   final String title;
   final String description;
   final IconData icon;
-  final Function onTap;
+  final VoidCallback onTap;
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/app_icon.dart';
@@ -7,11 +8,11 @@ class ChangeIconScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Change Launcher Icon'),
+    return const CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('Change Launcher Icon'),
       ),
-      body: const Center(
+      child: Center(
         child: Row(
           children: <Widget>[
             IconSelector(

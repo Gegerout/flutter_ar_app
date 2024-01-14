@@ -1,5 +1,6 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:collection/collection.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
@@ -20,9 +21,9 @@ class _LoadModelScreenState extends State<LoadModelScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Load .gltf or .glb')),
-        body: ARKitSceneView(
+  Widget build(BuildContext context) => CupertinoPageScaffold(
+        navigationBar: const CupertinoNavigationBar(middle: Text('Load .gltf or .glb')),
+        child: ARKitSceneView(
           showFeaturePoints: true,
           enableTapRecognizer: true,
           planeDetection: ARPlaneDetection.horizontalAndVertical,

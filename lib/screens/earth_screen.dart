@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:arkit_plugin/arkit_plugin.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
 
@@ -25,9 +26,9 @@ class _EarthScreenState extends State<EarthScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Earth Sample')),
-        body: ARKitSceneView(
+  Widget build(BuildContext context) => CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(middle: const Text('Earth Sample')),
+        child: ARKitSceneView(
           onARKitViewCreated: onARKitViewCreated,
         ),
       );

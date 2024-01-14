@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:arkit_plugin/arkit_plugin.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
@@ -25,9 +26,9 @@ class _PlaneDetectionScreenState extends State<PlaneDetectionScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Plane Detection Sample')),
-        body: ARKitSceneView(
+  Widget build(BuildContext context) => CupertinoPageScaffold(
+        navigationBar: const CupertinoNavigationBar(middle: Text('Plane Detection Sample')),
+        child: ARKitSceneView(
           showFeaturePoints: true,
           planeDetection: ARPlaneDetection.horizontal,
           onARKitViewCreated: onARKitViewCreated,

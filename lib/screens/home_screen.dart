@@ -35,159 +35,164 @@ class HomeScreen extends StatelessWidget {
         'The simplest scene with all geometries.',
         Icons.home,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const HelloWorldScreen())),
+            CupertinoPageRoute(builder: (c) => const HelloWorldScreen())),
       ),
       ScreenModel(
         'Tap',
         'Sphere which handles tap event.',
         Icons.touch_app,
         () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const TapScreen())),
+            .push<void>(CupertinoPageRoute(builder: (c) => const TapScreen())),
       ),
       ScreenModel(
         'Plane Detection',
         'Detects horizontal plane.',
         Icons.blur_on,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const PlaneDetectionScreen())),
+            CupertinoPageRoute(builder: (c) => const PlaneDetectionScreen())),
       ),
       ScreenModel(
         'Measure',
         'Measures distances',
         Icons.linear_scale,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const MeasureScreen())),
+            CupertinoPageRoute(builder: (c) => const MeasureScreen())),
       ),
       ScreenModel(
         'Physics',
         'A sphere and a plane with dynamic and static physics',
         Icons.file_download,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const PhysicsScreen())),
+            CupertinoPageRoute(builder: (c) => const PhysicsScreen())),
       ),
       ScreenModel(
         'Occlusion',
         'Spheres which are not visible after horizontal and vertical planes.',
         Icons.blur_circular,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const OcclusionScreen())),
+            CupertinoPageRoute(builder: (c) => const OcclusionScreen())),
       ),
       ScreenModel(
         'Manipulation',
         'Custom objects with pinch and rotation events.',
         Icons.threed_rotation,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const ManipulationScreen())),
+            CupertinoPageRoute(builder: (c) => const ManipulationScreen())),
       ),
       ScreenModel(
         'Face Tracking',
         'Face mask sample.',
         Icons.face,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const FaceDetectionScreen())),
+            CupertinoPageRoute(builder: (c) => const FaceDetectionScreen())),
       ),
       ScreenModel(
         'Body Tracking',
         'Dash that follows your hand.',
         Icons.person,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const BodyTrackingScreen())),
+            CupertinoPageRoute(builder: (c) => const BodyTrackingScreen())),
       ),
       ScreenModel(
         'Panorama',
         '360 photo sample.',
         Icons.panorama,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const PanoramaScreen())),
+            CupertinoPageRoute(builder: (c) => const PanoramaScreen())),
       ),
       ScreenModel(
         'Video',
         'Video on plane',
         Icons.videocam,
-        () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const VideoScreen())),
+        () => Navigator.of(context).push<void>(
+            CupertinoPageRoute(builder: (c) => const VideoScreen())),
       ),
       ScreenModel(
         'Positioned video',
         'Positioned video on plane',
         Icons.videocam,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const PositionedVideoScreen())),
+            CupertinoPageRoute(builder: (c) => const PositionedVideoScreen())),
       ),
       ScreenModel(
         'Widget Projection',
         'Flutter widgets in AR',
         Icons.widgets,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const WidgetProjectionScreen())),
+            CupertinoPageRoute(builder: (c) => const WidgetProjectionScreen())),
       ),
       ScreenModel(
         'Real Time Updates',
         'Calls a function once per frame',
         Icons.timer,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const RealTimeUpdatesScreen())),
+            CupertinoPageRoute(builder: (c) => const RealTimeUpdatesScreen())),
       ),
       ScreenModel(
         'Snapshot',
         'Make a photo of AR content',
         Icons.camera,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const SnapshotSceneScreen())),
+            CupertinoPageRoute(builder: (c) => const SnapshotSceneScreen())),
       ),
       ScreenModel(
         'Custom Object',
         'Place custom object on plane with coaching overlay.',
         Icons.nature,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const CustomObjectScreen())),
+            CupertinoPageRoute(builder: (c) => const CustomObjectScreen())),
       ),
       ScreenModel(
         'Load .gltf or .glb',
         'Load .gltf or .glb from the Flutter assets or the Documents folder',
         Icons.folder_copy,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const LoadModelScreen())),
+            CupertinoPageRoute(builder: (c) => const LoadModelScreen())),
       ),
       ScreenModel(
         'Custom Animation',
         'Custom object animation. Port of https://github.com/eh3rrera/ARKitAnimation',
         Icons.accessibility_new,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const CustomAnimationScreen())),
+            CupertinoPageRoute(builder: (c) => const CustomAnimationScreen())),
       ),
       ScreenModel(
         'Earth',
         'Sphere with an image texture and rotation animation.',
         Icons.language,
-        () => Navigator.of(context)
-            .push<void>(MaterialPageRoute(builder: (c) => const EarthScreen())),
+        () => Navigator.of(context).push<void>(
+            CupertinoPageRoute(builder: (c) => const EarthScreen())),
       ),
       ScreenModel(
         'Distance tracking',
         'Detects horizontal plane and track distance on it.',
         Icons.blur_on,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const DistanceTrackingScreen())),
+            CupertinoPageRoute(builder: (c) => const DistanceTrackingScreen())),
       ),
       ScreenModel(
         'Change icon',
         'Changes app icon',
         Icons.app_registration,
         () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (c) => const ChangeIconScreen())),
+            CupertinoPageRoute(builder: (c) => const ChangeIconScreen())),
       )
     ];
 
     return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.systemGroupedBackground,
       navigationBar: CupertinoNavigationBar(
-        leading:       SvgPicture.asset("assets/icon/icon_new_red.svg",
+        leading: SvgPicture.asset(
+          "assets/icon/icon_new_red.svg",
           colorFilter:
-          const ColorFilter.mode(Color(0xFFFF2C00), BlendMode.srcIn),
-          semanticsLabel: 'A red up arrow', height: 32, width: 32,),
+              const ColorFilter.mode(Color(0xFFFF2C00), BlendMode.srcIn),
+          semanticsLabel: 'A red up arrow',
+          height: 32,
+          width: 32,
+        ),
         middle: const Text("AR App"),
       ),
-      // appBar: AppBar(
+      // navigationBar: CupertinoNavigationBar(
       //   title: Row(
       //     children: [
       //       SvgPicture.asset("assets/icon/icon_new_red.svg",
@@ -206,17 +211,23 @@ class HomeScreen extends StatelessWidget {
       //               child: ScreenCard(item: s),
       //             ))
       //         .toList()),
-      child: SingleChildScrollView(
-        child: CupertinoFormSection.insetGrouped(
-            children: samples
-                .map((e) => GestureDetector(
-              onTap: e.onTap(),
-                  child: CupertinoFormRow(
-                        prefix: Text(e.title),
-                        child: Container(),
-                      ),
-                ))
-                .toList()),
+      child: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 16),
+            child: CupertinoFormSection.insetGrouped(
+                children: samples
+                    .map((e) => GestureDetector(
+                          onTap: e.onTap,
+                          child: CupertinoFormRow(
+                            padding: const EdgeInsets.all(20),
+                            prefix: Text(e.title),
+                            child: Container(),
+                          ),
+                        ))
+                    .toList()),
+          ),
+        ),
       ),
     );
   }

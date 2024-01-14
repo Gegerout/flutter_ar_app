@@ -1,4 +1,5 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
@@ -22,9 +23,10 @@ class _CustomObjectScreenState extends State<CustomObjectScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Custom object on plane Sample')),
-        body: ARKitSceneView(
+  Widget build(BuildContext context) => CupertinoPageScaffold(
+        navigationBar: const CupertinoNavigationBar(
+            middle: Text('Custom object on plane Sample')),
+        child: ARKitSceneView(
           showFeaturePoints: true,
           planeDetection: ARPlaneDetection.horizontal,
           onARKitViewCreated: onARKitViewCreated,
