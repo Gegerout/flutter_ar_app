@@ -160,11 +160,15 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: CupertinoButton(
-                onPressed: _incrementCounter,
-                child: const Icon(CupertinoIcons.add)),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: CupertinoButton.filled(
+                  padding: const EdgeInsets.all(16),
+                  onPressed: _incrementCounter,
+                  child: const Icon(CupertinoIcons.add)),
+            ),
           )
         ],
       ),

@@ -61,20 +61,24 @@ class _PositionedVideoScreenState extends State<PositionedVideoScreen> {
                   width: width * 1.2,
                   height: height,
                   child: VideoPlayer(_controller))),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: CupertinoButton(
-                child: Icon(_isPlaying
-                    ? CupertinoIcons.pause
-                    : CupertinoIcons.play_arrow),
-                onPressed: () async {
-                  if (_isPlaying) {
-                    _controller.pause();
-                  } else {
-                    _controller.play();
-                  }
-                  setState(() => _isPlaying = !_isPlaying);
-                }),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: CupertinoButton.filled(
+                  padding: const EdgeInsets.all(16),
+                  child: Icon(_isPlaying
+                      ? CupertinoIcons.pause
+                      : CupertinoIcons.play_arrow),
+                  onPressed: () async {
+                    if (_isPlaying) {
+                      _controller.pause();
+                    } else {
+                      _controller.play();
+                    }
+                    setState(() => _isPlaying = !_isPlaying);
+                  }),
+            ),
           )
         ],
       ));

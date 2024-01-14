@@ -33,22 +33,26 @@ class _CustomAnimationScreenState extends State<CustomAnimationScreen> {
               planeDetection: ARPlaneDetection.horizontal,
               onARKitViewCreated: onARKitViewCreated,
             ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: CupertinoButton(
-                  child: Icon(
-                      idle ? CupertinoIcons.play_arrow : CupertinoIcons.stop),
-                  onPressed: () async {
-                    if (idle) {
-                      await arkitController.playAnimation(
-                          key: 'dancing',
-                          sceneName: 'model.scnassets/twist_danceFixed',
-                          animationIdentifier: 'twist_danceFixed-1');
-                    } else {
-                      await arkitController.stopAnimation(key: 'dancing');
-                    }
-                    setState(() => idle = !idle);
-                  }),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: CupertinoButton.filled(
+                    padding: const EdgeInsets.all(16),
+                    child: Icon(
+                        idle ? CupertinoIcons.play_arrow : CupertinoIcons.stop),
+                    onPressed: () async {
+                      if (idle) {
+                        await arkitController.playAnimation(
+                            key: 'dancing',
+                            sceneName: 'model.scnassets/twist_danceFixed',
+                            animationIdentifier: 'twist_danceFixed-1');
+                      } else {
+                        await arkitController.stopAnimation(key: 'dancing');
+                      }
+                      setState(() => idle = !idle);
+                    }),
+              ),
             )
           ],
         ),

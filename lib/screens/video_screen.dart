@@ -31,20 +31,24 @@ class _VideoScreenState extends State<VideoScreen> {
         child: Stack(
           children: [
             ARKitSceneView(onARKitViewCreated: onARKitViewCreated),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: CupertinoButton(
-                  child: Icon(_isPlaying
-                      ? CupertinoIcons.pause
-                      : CupertinoIcons.play_arrow),
-                  onPressed: () async {
-                    if (_isPlaying) {
-                      await _video.pause();
-                    } else {
-                      await _video.play();
-                    }
-                    setState(() => _isPlaying = !_isPlaying);
-                  }),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: CupertinoButton.filled(
+                    padding: const EdgeInsets.all(16),
+                    child: Icon(_isPlaying
+                        ? CupertinoIcons.pause
+                        : CupertinoIcons.play_arrow),
+                    onPressed: () async {
+                      if (_isPlaying) {
+                        await _video.pause();
+                      } else {
+                        await _video.play();
+                      }
+                      setState(() => _isPlaying = !_isPlaying);
+                    }),
+              ),
             )
           ],
         ),

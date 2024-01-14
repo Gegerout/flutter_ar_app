@@ -29,29 +29,33 @@ class _SnapshotSceneScreenState extends State<SnapshotSceneScreen> {
       child: Stack(
         children: [
           ARKitSceneView(onARKitViewCreated: onARKitViewCreated),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: CupertinoButton(
-                child: const Icon(CupertinoIcons.camera_fill),
-                onPressed: () async {
-                  try {
-                    final image = await arkitController.snapshot();
-                    if (context.mounted) {
-                      await Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                          builder: (context) => SnapshotPreview(
-                            imageProvider: image,
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: CupertinoButton.filled(
+                  padding: const EdgeInsets.all(16),
+                  child: const Icon(CupertinoIcons.camera_fill),
+                  onPressed: () async {
+                    try {
+                      final image = await arkitController.snapshot();
+                      if (context.mounted) {
+                        await Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => SnapshotPreview(
+                              imageProvider: image,
+                            ),
                           ),
-                        ),
-                      );
+                        );
+                      }
+                    } catch (e) {
+                      if (kDebugMode) {
+                        print(e);
+                      }
                     }
-                  } catch (e) {
-                    if (kDebugMode) {
-                      print(e);
-                    }
-                  }
-                }),
+                  }),
+            ),
           )
         ],
       ));
