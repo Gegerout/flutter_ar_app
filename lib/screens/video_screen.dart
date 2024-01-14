@@ -32,7 +32,7 @@ class _VideoScreenState extends State<VideoScreen> {
           children: [
             ARKitSceneView(onARKitViewCreated: onARKitViewCreated),
             Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(20),
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: CupertinoButton.filled(

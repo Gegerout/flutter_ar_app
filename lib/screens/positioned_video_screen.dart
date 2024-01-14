@@ -62,7 +62,7 @@ class _PositionedVideoScreenState extends State<PositionedVideoScreen> {
                   height: height,
                   child: VideoPlayer(_controller))),
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(20),
             child: Align(
               alignment: Alignment.bottomRight,
               child: CupertinoButton.filled(
