@@ -12,10 +12,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CupertinoApp(
       title: 'Flutter AR App',
-      // theme: ThemeData(
-      //   useMaterial3: true,
-      //   colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFFF2C00))
-      // ),
       theme: CupertinoThemeData(
         brightness: Brightness.light,
         primaryColor: Color(0xFFFF2C00),
