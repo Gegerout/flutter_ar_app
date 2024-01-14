@@ -192,41 +192,23 @@ class HomeScreen extends StatelessWidget {
         ),
         middle: const Text("AR App"),
       ),
-      // navigationBar: CupertinoNavigationBar(
-      //   title: Row(
-      //     children: [
-      //       SvgPicture.asset("assets/icon/icon_new_red.svg",
-      //         colorFilter:
-      //         const ColorFilter.mode(Color(0xFFFF2C00), BlendMode.srcIn),
-      //         semanticsLabel: 'A red up arrow', height: 32, width: 32,),
-      //       const SizedBox(width: 16,),
-      //       const Text('AR App')
-      //     ],
-      //   ),
-      // ),
-      // body: ListView(
-      //     children: samples
-      //         .map((s) => Padding(
-      //               padding: const EdgeInsets.symmetric(horizontal: 20),
-      //               child: ScreenCard(item: s),
-      //             ))
-      //         .toList()),
       child: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 16),
-            child: CupertinoFormSection.insetGrouped(
-                children: samples
-                    .map((e) => GestureDetector(
-                          onTap: e.onTap,
-                          child: CupertinoFormRow(
-                            padding: const EdgeInsets.all(20),
-                            prefix: Text(e.title),
-                            child: Container(),
+          child: CupertinoFormSection.insetGrouped(
+              children: samples
+                  .map((e) => GestureDetector(
+                        onTap: e.onTap,
+                        child: CupertinoFormRow(
+                          padding: const EdgeInsets.all(20),
+                          prefix: Text(e.title),
+                          helper: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 4),
+                            child: Text(e.description),
                           ),
-                        ))
-                    .toList()),
-          ),
+                          child: Container(),
+                        ),
+                      ))
+                  .toList()),
         ),
       ),
     );
