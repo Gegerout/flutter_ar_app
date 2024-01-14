@@ -1,6 +1,5 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:collection/collection.dart';
 
@@ -39,7 +38,7 @@ class _RealTimeUpdatesScreenState extends State<RealTimeUpdatesScreen> {
 
   void _onARKitViewCreated(ARKitController arkitController) {
     final material = ARKitMaterial(
-      diffuse: ARKitMaterialProperty.color(Colors.white),
+      diffuse: ARKitMaterialProperty.color(CupertinoColors.white),
     );
 
     final sphere = ARKitSphere(

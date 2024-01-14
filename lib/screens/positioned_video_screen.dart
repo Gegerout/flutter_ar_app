@@ -1,9 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/cupertino.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
-
 import 'package:arkit_plugin/arkit_plugin.dart';
-import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class PositionedVideoScreen extends StatefulWidget {
@@ -47,17 +45,6 @@ class _PositionedVideoScreenState extends State<PositionedVideoScreen> {
   @override
   Widget build(BuildContext context) => CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(middle: Text('Video Sample')),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () async {
-      //     if (_isPlaying) {
-      //       _controller.pause();
-      //     } else {
-      //       _controller.play();
-      //     }
-      //     setState(() => _isPlaying = !_isPlaying);
-      //   },
-      //   child: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
-      // ),
       child: Stack(
         children: [
           ARKitSceneView(
@@ -73,7 +60,22 @@ class _PositionedVideoScreenState extends State<PositionedVideoScreen> {
                   transform: transform,
                   width: width * 1.2,
                   height: height,
-                  child: VideoPlayer(_controller)))
+                  child: VideoPlayer(_controller))),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: CupertinoButton(
+                child: Icon(_isPlaying
+                    ? CupertinoIcons.pause
+                    : CupertinoIcons.play_arrow),
+                onPressed: () async {
+                  if (_isPlaying) {
+                    _controller.pause();
+                  } else {
+                    _controller.play();
+                  }
+                  setState(() => _isPlaying = !_isPlaying);
+                }),
+          )
         ],
       ));
 

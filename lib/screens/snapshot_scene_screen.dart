@@ -1,8 +1,6 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-
 import '../utils/ar_helper.dart';
 
 class SnapshotSceneScreen extends StatefulWidget {
@@ -28,29 +26,35 @@ class _SnapshotSceneScreenState extends State<SnapshotSceneScreen> {
       navigationBar: const CupertinoNavigationBar(
         middle: Text('Snapshot'),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   child: const Icon(Icons.camera_alt),
-      //   onPressed: () async {
-      //     try {
-      //       final image = await arkitController.snapshot();
-      //       if (context.mounted) {
-      //         await Navigator.push(
-      //           context,
-      //           MaterialPageRoute(
-      //             builder: (context) => SnapshotPreview(
-      //               imageProvider: image,
-      //             ),
-      //           ),
-      //         );
-      //       }
-      //     } catch (e) {
-      //       if (kDebugMode) {
-      //         print(e);
-      //       }
-      //     }
-      //   },
-      // ),
-      child: ARKitSceneView(onARKitViewCreated: onARKitViewCreated));
+      child: Stack(
+        children: [
+          ARKitSceneView(onARKitViewCreated: onARKitViewCreated),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: CupertinoButton(
+                child: const Icon(CupertinoIcons.camera_fill),
+                onPressed: () async {
+                  try {
+                    final image = await arkitController.snapshot();
+                    if (context.mounted) {
+                      await Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) => SnapshotPreview(
+                            imageProvider: image,
+                          ),
+                        ),
+                      );
+                    }
+                  } catch (e) {
+                    if (kDebugMode) {
+                      print(e);
+                    }
+                  }
+                }),
+          )
+        ],
+      ));
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;

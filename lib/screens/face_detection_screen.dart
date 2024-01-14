@@ -1,6 +1,5 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
@@ -34,7 +33,8 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
 
   @override
   Widget build(BuildContext context) => CupertinoPageScaffold(
-        navigationBar: const CupertinoNavigationBar(middle: Text('Face Detection Sample')),
+        navigationBar:
+            const CupertinoNavigationBar(middle: Text('Face Detection Sample')),
         child: Stack(
           children: [
             ARKitSceneView(
@@ -45,18 +45,20 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
                 alignment: Alignment.topCenter,
                 child: Text(
                   emotion,
-                  style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                      fontWeight: FontWeight.bold, color: Colors.white),
+                  style: CupertinoTheme.of(context)
+                      .textTheme
+                      .textStyle
+                      .copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: CupertinoColors.white),
                 ))
           ],
         ),
       );
 
   void onARKitViewCreated(ARKitController arkitController) {
-    happyPlayer
-        .setAsset("assets/audio/happy.mp3");
-    sadPlayer
-        .setAsset("assets/audio/sad.mp3");
+    happyPlayer.setAsset("assets/audio/happy.mp3");
+    sadPlayer.setAsset("assets/audio/sad.mp3");
     happyPlayer.setLoopMode(LoopMode.all);
     sadPlayer.setLoopMode(LoopMode.all);
     this.arkitController = arkitController;
@@ -87,7 +89,7 @@ class _FaceDetectionScreenState extends State<FaceDetectionScreen> {
       transform.getColumn(3).z,
     );
     final material = ARKitMaterial(
-      diffuse: ARKitMaterialProperty.color(Colors.yellow),
+      diffuse: ARKitMaterialProperty.color(CupertinoColors.systemYellow),
     );
     final sphere = ARKitBox(
         materials: [material], width: 0.03, height: 0.03, length: 0.03);

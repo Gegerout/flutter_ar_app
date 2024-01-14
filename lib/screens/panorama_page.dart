@@ -1,6 +1,5 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
 
 class PanoramaScreen extends StatefulWidget {
@@ -23,7 +22,8 @@ class _PanoramaScreenState extends State<PanoramaScreen> {
 
   @override
   Widget build(BuildContext context) => CupertinoPageScaffold(
-        navigationBar: const CupertinoNavigationBar(middle: Text('Panorama Sample')),
+        navigationBar:
+            const CupertinoNavigationBar(middle: Text('Panorama Sample')),
         child: ARKitSceneView(
           onARKitViewCreated: onARKitViewCreated,
         ),

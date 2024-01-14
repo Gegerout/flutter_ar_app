@@ -1,7 +1,6 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
 class LoadModelScreen extends StatefulWidget {
@@ -22,7 +21,8 @@ class _LoadModelScreenState extends State<LoadModelScreen> {
 
   @override
   Widget build(BuildContext context) => CupertinoPageScaffold(
-        navigationBar: const CupertinoNavigationBar(middle: Text('Load .gltf or .glb')),
+        navigationBar:
+            const CupertinoNavigationBar(middle: Text('Load .gltf or .glb')),
         child: ARKitSceneView(
           showFeaturePoints: true,
           enableTapRecognizer: true,
@@ -51,54 +51,14 @@ class _LoadModelScreenState extends State<LoadModelScreen> {
     );
 
     final node = _getNodeFromFlutterAsset(position);
-    // final node = _getNodeFromNetwork(position);
     arkitController.add(node);
   }
 
   ARKitGltfNode _getNodeFromFlutterAsset(vector.Vector3 position) =>
       ARKitGltfNode(
         assetType: AssetType.flutterAsset,
-        // Box model from
-        // https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Box/glTF-Binary/Box.glb
         url: 'assets/models/hutao.glb',
         scale: vector.Vector3(0.05, 0.05, 0.05),
         position: position,
       );
 }
-
-// Future<ARKitGltfNode> _getNodeFromNetwork(vector.Vector3 position) async {
-// And add dependencies to pubspec.yaml file
-// path_provider: ^2.0.3
-// dio: ^5.3.3
-//
-// Import to test file download
-// import 'package:dio/dio.dart';
-// import 'package:path_provider/path_provider.dart';
-//
-//  final file = await _downloadFile(
-//          "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Box/glTF-Binary/Box.glb");
-//  if (file.existsSync()) {
-//    //Load from app document folder
-//    return ARKitGltfNode(
-//      assetType: AssetType.documents,
-//      url: file.path.split('/').last, //  filename.extension only!
-//      scale: vector.Vector3(0.01, 0.01, 0.01),
-//      position: position,
-//    );
-//  }
-//  throw Exception('Failed to load $file');
-// }
-//
-// Future<File> _downloadFile(String url) async {
-//   try {
-//     final dir = await getApplicationDocumentsDirectory();
-//     final filePath = '${dir.path}/${url.split("/").last}';
-//     await Dio().download(url, filePath);
-//     final file = File(filePath);
-//     print('Download completed!! path = $filePath');
-//     return file;
-//   } catch (e) {
-//     print('Caught an exception: $e');
-//     rethrow;
-//   }
-// }

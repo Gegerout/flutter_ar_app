@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:collection/collection.dart';
 
@@ -26,7 +25,8 @@ class _ManipulationScreenState extends State<ManipulationScreen> {
 
   @override
   Widget build(BuildContext context) => CupertinoPageScaffold(
-        navigationBar: const CupertinoNavigationBar(middle: Text('Manipulation Sample')),
+        navigationBar:
+            const CupertinoNavigationBar(middle: Text('Manipulation Sample')),
         child: ARKitSceneView(
           enablePinchRecognizer: true,
           enablePanRecognizer: true,

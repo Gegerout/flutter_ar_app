@@ -1,9 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/cupertino.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
-
 import 'package:arkit_plugin/arkit_plugin.dart';
-import 'package:flutter/material.dart';
 
 class VideoScreen extends StatefulWidget {
   const VideoScreen({super.key});
@@ -28,20 +26,29 @@ class _VideoScreenState extends State<VideoScreen> {
 
   @override
   Widget build(BuildContext context) => CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(middle: Text('Video Sample')),
-      child: ARKitSceneView(onARKitViewCreated: onARKitViewCreated),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () async {
-      //     if (_isPlaying) {
-      //       await _video.pause();
-      //     } else {
-      //       await _video.play();
-      //     }
-      //     setState(() => _isPlaying = !_isPlaying);
-      //   },
-      //   child: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
-      // )
-  );
+        navigationBar:
+            const CupertinoNavigationBar(middle: Text('Video Sample')),
+        child: Stack(
+          children: [
+            ARKitSceneView(onARKitViewCreated: onARKitViewCreated),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: CupertinoButton(
+                  child: Icon(_isPlaying
+                      ? CupertinoIcons.pause
+                      : CupertinoIcons.play_arrow),
+                  onPressed: () async {
+                    if (_isPlaying) {
+                      await _video.pause();
+                    } else {
+                      await _video.play();
+                    }
+                    setState(() => _isPlaying = !_isPlaying);
+                  }),
+            )
+          ],
+        ),
+      );
 
   void onARKitViewCreated(ARKitController arkitController) {
     this.arkitController = arkitController;
@@ -56,7 +63,6 @@ class _VideoScreenState extends State<VideoScreen> {
       doubleSided: true,
     );
 
-    //final sphere = ARKitSphere(materials: [material], radius: 1);
     final plane = ARKitPlane(width: 0.5, height: 0.25, materials: [material]);
 
     final node = ARKitNode(geometry: plane);

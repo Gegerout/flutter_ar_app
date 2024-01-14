@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
 class WidgetProjectionScreen extends StatefulWidget {
@@ -41,13 +40,6 @@ class _WidgetProjectionScreenState extends State<WidgetProjectionScreen> {
             worldAlignment: ARWorldAlignment.camera,
             configuration: ARKitConfiguration.imageTracking,
           ),
-          // Align(
-          //     alignment: Alignment.topCenter,
-          //     child: Text(
-          //       "$width, $height",
-          //       style: Theme.of(context).textTheme.displayMedium?.copyWith(
-          //           fontWeight: FontWeight.bold, color: Colors.white),
-          //     )),
           Positioned(
             left: x,
             top: y,
@@ -118,9 +110,11 @@ class _WidgetProjectionScreenState extends State<WidgetProjectionScreen> {
       x = pointsViewportSpaceResults[2]!.x;
       y = pointsViewportSpaceResults[2]!.y;
       this.width = pointsViewportSpaceResults[0]!
-          .distanceTo(pointsViewportSpaceResults[3]!) - 170;
+              .distanceTo(pointsViewportSpaceResults[3]!) -
+          170;
       this.height = pointsViewportSpaceResults[1]!
-          .distanceTo(pointsViewportSpaceResults[2]!) - 70;
+              .distanceTo(pointsViewportSpaceResults[2]!) -
+          70;
     });
   }
 }
@@ -150,25 +144,30 @@ class _MyHomePageState extends State<MyHomePage> {
       navigationBar: CupertinoNavigationBar(
         middle: Text(widget.title),
       ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      child: Stack(
+        children: [
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text(
+                  'You have pushed the button this many times:',
+                ),
+                Text(
+                  '$_counter',
+                  style: CupertinoTheme.of(context).textTheme.textStyle,
+                ),
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: CupertinoButton(
+                onPressed: _incrementCounter,
+                child: const Icon(CupertinoIcons.add)),
+          )
+        ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ),
     );
   }
 }

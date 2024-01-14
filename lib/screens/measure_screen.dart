@@ -1,6 +1,5 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:collection/collection.dart';
 
@@ -53,7 +52,7 @@ class _MeasureScreenState extends State<MeasureScreen> {
     );
     final material = ARKitMaterial(
         lightingModelName: ARKitLightingModel.constant,
-        diffuse: ARKitMaterialProperty.color(Colors.blue));
+        diffuse: ARKitMaterialProperty.color(CupertinoColors.systemBlue));
     final sphere = ARKitSphere(
       radius: 0.006,
       materials: [material],
@@ -94,7 +93,7 @@ class _MeasureScreenState extends State<MeasureScreen> {
       extrusionDepth: 1,
       materials: [
         ARKitMaterial(
-          diffuse: ARKitMaterialProperty.color(Colors.red),
+          diffuse: ARKitMaterialProperty.color(CupertinoColors.systemRed),
         )
       ],
     );

@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 import 'package:collection/collection.dart';
 
@@ -29,7 +28,8 @@ class _DistanceTrackingScreenState extends State<DistanceTrackingScreen> {
 
   @override
   Widget build(BuildContext context) => CupertinoPageScaffold(
-        navigationBar: const CupertinoNavigationBar(middle: Text('Distance Tracking Sample')),
+        navigationBar: const CupertinoNavigationBar(
+            middle: Text('Distance Tracking Sample')),
         child: ARKitSceneView(
           showFeaturePoints: true,
           planeDetection: ARPlaneDetection.horizontal,
@@ -78,7 +78,7 @@ class _DistanceTrackingScreenState extends State<DistanceTrackingScreen> {
       materials: [
         ARKitMaterial(
           transparency: 0.5,
-          diffuse: ARKitMaterialProperty.color(Colors.white),
+          diffuse: ARKitMaterialProperty.color(CupertinoColors.white),
         )
       ],
     );
@@ -141,7 +141,7 @@ class _DistanceTrackingScreenState extends State<DistanceTrackingScreen> {
       extrusionDepth: 1,
       materials: [
         ARKitMaterial(
-          diffuse: ARKitMaterialProperty.color(Colors.red),
+          diffuse: ARKitMaterialProperty.color(CupertinoColors.systemRed),
         )
       ],
     );

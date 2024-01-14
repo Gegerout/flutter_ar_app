@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
 class HelloWorldScreen extends StatefulWidget {
@@ -61,7 +60,7 @@ class _HelloWorldPagState extends State<HelloWorldScreen> {
       materials: [
         ARKitMaterial(
           transparency: 0.5,
-          diffuse: ARKitMaterialProperty.color(Colors.white),
+          diffuse: ARKitMaterialProperty.color(CupertinoColors.white),
         )
       ],
     );
@@ -77,7 +76,7 @@ class _HelloWorldPagState extends State<HelloWorldScreen> {
       extrusionDepth: 1,
       materials: [
         ARKitMaterial(
-          diffuse: ARKitMaterialProperty.color(Colors.blue),
+          diffuse: ARKitMaterialProperty.color(CupertinoColors.systemBlue),
         )
       ],
     );

@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 
-enum IconType { Standart, Yellow, Red, NewRed }
+enum IconType { normal, yellow, red, newRed }
 
 class AppIcon {
   static const MethodChannel platform = MethodChannel('appIconChannel');
@@ -13,13 +13,13 @@ class AppIcon {
     String iconName;
 
     switch (icon) {
-      case IconType.Yellow:
+      case IconType.yellow:
         iconName = 'Yellow';
         break;
-      case IconType.Red:
+      case IconType.red:
         iconName = 'Red';
         break;
-      case IconType.NewRed:
+      case IconType.newRed:
         iconName = 'NewRed';
         break;
       default:

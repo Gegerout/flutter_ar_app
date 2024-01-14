@@ -1,6 +1,5 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
 class CustomAnimationScreen extends StatefulWidget {
@@ -25,25 +24,33 @@ class _CustomAnimationScreenState extends State<CustomAnimationScreen> {
 
   @override
   Widget build(BuildContext context) => CupertinoPageScaffold(
-        navigationBar: const CupertinoNavigationBar(middle: Text('Custom Animation')),
-        // floatingActionButton: FloatingActionButton(
-        //   child: Icon(idle ? Icons.play_arrow : Icons.stop),
-        //   onPressed: () async {
-        //     if (idle) {
-        //       await arkitController.playAnimation(
-        //           key: 'dancing',
-        //           sceneName: 'model.scnassets/twist_danceFixed',
-        //           animationIdentifier: 'twist_danceFixed-1');
-        //     } else {
-        //       await arkitController.stopAnimation(key: 'dancing');
-        //     }
-        //     setState(() => idle = !idle);
-        //   },
-        // ),
-        child: ARKitSceneView(
-          showFeaturePoints: true,
-          planeDetection: ARPlaneDetection.horizontal,
-          onARKitViewCreated: onARKitViewCreated,
+        navigationBar:
+            const CupertinoNavigationBar(middle: Text('Custom Animation')),
+        child: Stack(
+          children: [
+            ARKitSceneView(
+              showFeaturePoints: true,
+              planeDetection: ARPlaneDetection.horizontal,
+              onARKitViewCreated: onARKitViewCreated,
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: CupertinoButton(
+                  child: Icon(
+                      idle ? CupertinoIcons.play_arrow : CupertinoIcons.stop),
+                  onPressed: () async {
+                    if (idle) {
+                      await arkitController.playAnimation(
+                          key: 'dancing',
+                          sceneName: 'model.scnassets/twist_danceFixed',
+                          animationIdentifier: 'twist_danceFixed-1');
+                    } else {
+                      await arkitController.stopAnimation(key: 'dancing');
+                    }
+                    setState(() => idle = !idle);
+                  }),
+            )
+          ],
         ),
       );
 

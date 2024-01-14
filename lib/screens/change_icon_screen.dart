@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
 import '../utils/app_icon.dart';
 
 class ChangeIconScreen extends StatelessWidget {
@@ -16,22 +14,22 @@ class ChangeIconScreen extends StatelessWidget {
         child: Row(
           children: <Widget>[
             IconSelector(
-              appIcon: IconType.Standart,
+              appIcon: IconType.normal,
               imageAsset: 'assets/icon/icon.png',
               name: 'Normal',
             ),
             IconSelector(
-              appIcon: IconType.Yellow,
+              appIcon: IconType.yellow,
               imageAsset: 'assets/icon/icon_yellow.png',
               name: 'Yellow',
             ),
             IconSelector(
-              appIcon: IconType.Red,
+              appIcon: IconType.red,
               imageAsset: 'assets/icon/icon_red.png',
               name: 'Red',
             ),
             IconSelector(
-              appIcon: IconType.NewRed,
+              appIcon: IconType.newRed,
               imageAsset: 'assets/icon/icon_new_red.png',
               name: 'NewRed',
             ),

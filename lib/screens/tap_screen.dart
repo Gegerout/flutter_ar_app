@@ -1,6 +1,5 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
 class TapScreen extends StatefulWidget {
@@ -24,7 +23,8 @@ class _TapScreenState extends State<TapScreen> {
 
   @override
   Widget build(BuildContext context) => CupertinoPageScaffold(
-        navigationBar: const CupertinoNavigationBar(middle: Text('Tap Gesture Sample')),
+        navigationBar:
+            const CupertinoNavigationBar(middle: Text('Tap Gesture Sample')),
         child: ARKitSceneView(
           enableTapRecognizer: true,
           onARKitViewCreated: onARKitViewCreated,
@@ -35,8 +35,8 @@ class _TapScreenState extends State<TapScreen> {
     this.arkitController = arkitController;
     this.arkitController.onNodeTap = (nodes) => onNodeTapHandler(nodes);
 
-    final material =
-        ARKitMaterial(diffuse: ARKitMaterialProperty.color(Colors.yellow));
+    final material = ARKitMaterial(
+        diffuse: ARKitMaterialProperty.color(CupertinoColors.systemYellow));
     sphere = ARKitSphere(
       materials: [material],
       radius: 0.1,
@@ -54,16 +54,16 @@ class _TapScreenState extends State<TapScreen> {
     final name = nodesList.first;
     final color =
         (sphere!.materials.value!.first.diffuse as ARKitMaterialColor).color ==
-                Colors.yellow
-            ? Colors.blue
-            : Colors.yellow;
+                CupertinoColors.systemYellow
+            ? CupertinoColors.systemBlue
+            : CupertinoColors.systemYellow;
     sphere!.materials.value = [
       ARKitMaterial(diffuse: ARKitMaterialProperty.color(color))
     ];
-    showDialog<void>(
+    showCupertinoModalPopup(
       context: context,
       builder: (BuildContext context) =>
-          AlertDialog(content: Text('You tapped on $name')),
+          CupertinoPopupSurface(child: Text('You tapped on $name')),
     );
   }
 }

@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
 class PhysicsScreen extends StatefulWidget {
@@ -24,7 +23,8 @@ class _PhysicsScreenState extends State<PhysicsScreen> {
 
   @override
   Widget build(BuildContext context) => CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(middle: Text('Physics Sample')),
+      navigationBar:
+          const CupertinoNavigationBar(middle: Text('Physics Sample')),
       child: ARKitSceneView(onARKitViewCreated: onARKitViewCreated));
 
   void onARKitViewCreated(ARKitController arkitController) {
@@ -35,8 +35,8 @@ class _PhysicsScreenState extends State<PhysicsScreen> {
   }
 
   void _addSphere(ARKitController controller) {
-    final material =
-        ARKitMaterial(diffuse: ARKitMaterialProperty.color(Colors.blue));
+    final material = ARKitMaterial(
+        diffuse: ARKitMaterialProperty.color(CupertinoColors.systemBlue));
     final sphere = ARKitSphere(materials: [material], radius: 0.1);
     final node = ARKitNode(
         geometry: sphere,
@@ -54,7 +54,7 @@ class _PhysicsScreenState extends State<PhysicsScreen> {
       height: 2,
       materials: [
         ARKitMaterial(
-          diffuse: ARKitMaterialProperty.color(Colors.green),
+          diffuse: ARKitMaterialProperty.color(CupertinoColors.systemGreen),
         )
       ],
     );
