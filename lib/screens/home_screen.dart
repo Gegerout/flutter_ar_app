@@ -181,35 +181,51 @@ class HomeScreen extends StatelessWidget {
 
     return CupertinoPageScaffold(
       backgroundColor: CupertinoColors.systemGroupedBackground,
-      navigationBar: CupertinoNavigationBar(
-        leading: SvgPicture.asset(
-          "assets/icon/icon_new_red.svg",
-          colorFilter:
-              const ColorFilter.mode(Color(0xFFFF2C00), BlendMode.srcIn),
-          semanticsLabel: 'A red up arrow',
-          height: 32,
-          width: 32,
-        ),
-        middle: const Text("AR App"),
-      ),
-      child: SafeArea(
-        child: SingleChildScrollView(
-          child: CupertinoFormSection.insetGrouped(
-              children: samples
-                  .map((e) => GestureDetector(
-                        onTap: e.onTap,
-                        child: CupertinoFormRow(
-                          padding: const EdgeInsets.all(20),
-                          prefix: Text(e.title),
-                          helper: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 4),
-                            child: Text(e.description),
+      child: NestedScrollView(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 16),
+            child: CupertinoFormSection.insetGrouped(
+                children: samples
+                    .map((e) => GestureDetector(
+                          onTap: e.onTap,
+                          child: CupertinoFormRow(
+                            padding: const EdgeInsets.all(20),
+                            prefix: Text(e.title),
+                            helper: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 4),
+                              child: Text(e.description),
+                            ),
+                            child: Container(),
                           ),
-                          child: Container(),
-                        ),
-                      ))
-                  .toList()),
+                        ))
+                    .toList()),
+          ),
         ),
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            CupertinoSliverNavigationBar(
+              largeTitle: const Text('AR App'),
+              leading: SvgPicture.asset(
+                "assets/icon/icon_new_red.svg",
+                colorFilter:
+                const ColorFilter.mode(Color(0xFFFF2C00), BlendMode.srcIn),
+                semanticsLabel: 'A red up arrow',
+                height: 32,
+                width: 32,
+              ),
+              border: !innerBoxIsScrolled
+                  ? const Border(bottom: BorderSide(color: Colors.transparent))
+                  : const Border(
+                      bottom: BorderSide(
+                        color: Color(0x4D000000),
+                        width: 0.0, // 0.0 means one physical pixel
+                      ),
+                    ),
+              backgroundColor: Colors.transparent,
+            )
+          ];
+        },
       ),
     );
   }
